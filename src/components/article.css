@@ -1,0 +1,126 @@
+.art-background {
+  width: 100%;
+  background-color: #f8ba00;
+  display: flex;
+  justify-content: center;
+  padding: 30px 210px 10px 50px;
+  flex-flow: column nowrap;
+  overflow: scroll;
+  color: white;
+}
+
+.art-background a {
+  color: white;
+}
+
+.art-background h1 {
+  font-size: 100px;
+  margin: 10px 0 10px 0;
+}
+
+.art-background img {
+  border-radius: 20px 20px 0 0;
+  margin: auto;
+  transition: height 2s;
+}
+.art-main img {
+  border-radius: 0;
+  align-self: center;
+  align-content: center;
+  width: 70%;
+  margin: 10px 15%;
+}
+
+.blog-img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.image-expand {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin-top: -45px;
+  padding: 0 0 5px 5px;
+  z-index: 1000;
+  position: absolute;
+  opacity: 50%;
+  transition: opacity 0.25s;
+}
+#expandText {
+  margin: 0 0 0 -20px;
+  padding: 2px 10px 2px 25px;
+  border-radius: 0 20px 20px 0;
+  background-color: rgba(0, 0, 255, 0.5);
+  transition: 0.5s;
+  transition-delay: 0.25s;
+}
+.image-expand p {
+  margin: 0; padding: 0;
+  transition: opacity 0.25s;
+  transition-delay: 0.75s;
+}
+.image-expand-icon-closed {
+  transform: translateX(-100px) scale(0, 1);
+  transition-delay: 0s;
+}
+.image-expand-icon-closed p {
+  opacity: 0;
+  transition-delay: 0s;
+}
+.image-hover-active {
+  opacity: 100%;
+}
+
+.image-expand-icon {
+  background-color: blue;
+  border-radius: 50px;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: box-shadow 2s;
+}
+.image-expand-icon:hover {
+  box-shadow: 0px 4px 29px -5px rgba(0,0,0,1);
+}
+
+.art-main {
+  color: black;
+  padding: 20px;
+  border-radius: 0 0 20px 20px;
+  background-color: white;
+}
+
+.art-main a {
+  color: #f8ba00;
+}
+.art-main a:hover {
+  color: black;
+}
+
+.art-main p {
+  display: inline-block;
+}
+
+.mainimg-open * {
+  height: 100%;
+  z-index: 0;
+}
+.mainimg-closed {
+  height: 50vh;
+}
+.mainimg-closed * {
+  height: 50vh;
+}
+
+@media (max-width: 760px){
+  .art-background {
+    padding: 10px 10px;
+  }
+  .art-background h1 {
+    font-size: 60px;
+  }
+}
