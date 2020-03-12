@@ -4,13 +4,14 @@ backend:
 
 media_folder: static/img
 public_folder: /img
+logo_url: /content/assets/julianm_favicon.png
 
 collections:
   - name: "blog"
     label: "Blog"
     folder: "content/blog"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}"
     editor:
      preview: false
     fields:

@@ -298,7 +298,7 @@ img {
 h1 {
   margin-left: 0;
   margin-right: 0;
-  margin-top: 0;
+  margin-top: 1.45rem;
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
@@ -551,7 +551,7 @@ iframe {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 1.2rem;
 }
 hr {
   margin-left: 0;
@@ -780,6 +780,9 @@ pre tt:after {
 }
 .buttonclosed {
   transform: rotate(0deg);
+}
+.p404 {
+  height: 80vh;
 }
 
 @media (max-width: 860px) {

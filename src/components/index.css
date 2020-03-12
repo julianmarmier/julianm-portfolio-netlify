@@ -5,7 +5,6 @@
   box-shadow: 0 -10px 20px -2px black;
   display: flex;
   align-items: center;
-  margin-bottom: 5vh;
 }
 .opening > h1 {
   line-height: 100px;
@@ -104,20 +103,26 @@
 
 .portfolio-img {
   max-height: 200px;
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 0;
 }
 
 .portfolio li {
   min-height: 100%;
   width: inherit;
   background-color: white;
-  transition: box-shadow 0.2s, border-radius 0.2s;
+  transition: border 0.2s, box-shadow 0.2s, padding 0.2s;
+  border: white;
   overflow: hidden;
+
 }
 
 .portfolio li:hover {
   box-shadow: 0px 20px 43px -9px rgba(0,0,0,0.45);
   border-radius: 10px;
-  transition: box-shadow 0.5s, border-radius 0.5s;
+  border: solid white 3pt;
+  transition: border 0.5s, box-shadow 0.5s, padding 0.5s;
   overflow: hidden;
 }
 
@@ -146,9 +151,11 @@
   justify-content: space-between;
   align-items: center;
   border: solid #f8ba00;
-  border-width: 2pt 0 2pt 0;
+  border-width: 0 0 2pt 0;
   padding: 40px 240px 40px 40px;
   margin-bottom: 40px;
+  z-index: -100;
+  background-color: #ebebeb;
 }
 
 .hero {
