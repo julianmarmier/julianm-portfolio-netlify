@@ -17,7 +17,7 @@ const IndexPage = ({ data }) => {
       <div className="opening"><h1>Welcome to my portfolio.</h1></div>
       <div className="divider">
         <div className="hero"><h2>You're here to see my work, right?</h2></div>
-        <div className="hero"><Link to="/#portfolio" className="hero-big">Skip to the portfolio</Link><a href="/content/assets/Portfolio_JulianMarmier.pdf" className="hero-big">Download the PDF version</a></div>
+        <div className="hero"><Link to="/#portfolio" className="hero-big">Skip to the portfolio</Link><Link to={"/Portfolio_JulianMarmier.pdf"} className="hero-big">Download the PDF version</a></div>
       </div>
       <div className="main-grid">
         <div className="grid-left"><h2>Hi, I'm Julian Marmier, a high school senior living in Lexington, Massachusetts.</h2></div>
