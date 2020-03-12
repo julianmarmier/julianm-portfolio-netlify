@@ -1,6 +1,6 @@
 ---
 title: Videos for School
-date: 2020-03-10T04:25:26.272Z
+date: 2020-02-23T05:25:26.272Z
 description: Videos I made for school
 thumbnail: /img/4793bdc488d342969d2f245d57cd2c09.png
 ---
