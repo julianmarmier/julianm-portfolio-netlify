@@ -14,6 +14,8 @@ My biggest full-on web design project is probably the website you're looking at 
 
 ## Go to Math Textbook Page
 
+![Go To Math Texbook Page - Website](/img/screen-shot-2020-03-12-at-7.27.16-am.png)
+
 A friend found a way to use HTML [query strings](https://en.wikipedia.org/wiki/Query_string) to directly navigate to a specific page of the online matn textbook. He implemented this in HTML, and since I wanted to help I did. I was fairly new to web design, so the design is a little sloppy, but I had fun experimenting with CSS color transitions. Check it out at [math.julianm.tk](http://math.julianm.tk).
 
 ## ECLO Consulting
