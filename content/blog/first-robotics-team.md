@@ -1,6 +1,6 @@
 ---
 title: FIRST Robotics Team
-date: 2020-03-12T21:30:26.702Z
+date: 2020-03-14T03:47:00.000Z
 description: >-
   An overview of the work I complete as a member of the Lexington Legoheads, a
   FIRST Tech Challenge robotics team.
