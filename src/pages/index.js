@@ -40,7 +40,7 @@ const IndexPage = ({ data }) => {
           </p></div>
           <div className="grid-left"><h2>What I Can Do</h2></div>
           <div className="grid-right"><p>
-            I can use anything from Google Sheets and Photoshop to SketchUp and Atom, and would be happy to learn anything new. In terms of computer programming, I have had experience with many different sorts of programming languages including Python, JavaScript, C++, Ruby, HTML and CSS. With proper documentation and some time, I can also learn to use programming libraries, although I am most comfortable with web development.
+            I can use anything from Google Sheets and Photoshop to SketchUp and Blender, and would be happy to learn anything new. In terms of computer programming, I have had experience with many different sorts of programming languages including Python, JavaScript, C++, Ruby, HTML and CSS. With proper documentation and some time, I can also learn to use programming libraries, although I am most comfortable with web development.
           </p></div>
           <div className="portfolio grid-full" id="portfolio">
             <h1>Portfolio</h1>
