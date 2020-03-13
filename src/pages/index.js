@@ -1,13 +1,12 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import Img from 'gatsby-image'
+//import Img from 'gatsby-image'
 import Layout from '../components/layout';
 
 import SEO from '../components/seo';
 import '../components/index.css';
 
 const IndexPage = ({ data }) => {
-  const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
 
   return(
@@ -49,7 +48,7 @@ const IndexPage = ({ data }) => {
               {posts.map(({ node }) => {
                 return(
                   <Link to={node.fields.slug}><li key={node.fields.slug}>
-                    <img className="portfolio-img" src={node.frontmatter.thumbnail}/>
+                    <img className="portfolio-img" alt={node.frontmatter.description} src={node.frontmatter.thumbnail}/>
                     <h2>
                       {node.frontmatter.title}
                     </h2>

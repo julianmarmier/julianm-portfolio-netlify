@@ -19,7 +19,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       />
 
       <div className="art-background">
-        <ImagePointer imageFluid={ post.frontmatter.thumbnail } />
+        <ImagePointer imageFluid={ post.frontmatter.thumbnail } descriptionText={ post.frontmatter.description }/>
         <h1>{post.frontmatter.title}</h1>
 
         <section className="art-main" dangerouslySetInnerHTML={{ __html: post.html }} />

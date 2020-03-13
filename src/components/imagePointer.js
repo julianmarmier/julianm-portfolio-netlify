@@ -1,5 +1,5 @@
 import React from 'react';
-import Img from 'gatsby-image';
+//import Img from 'gatsby-image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMousePointer } from '@fortawesome/free-solid-svg-icons';
 import './layout.css';
@@ -29,10 +29,10 @@ class ImagePointer extends React.Component {
   render() {
     return (
       <div>
-        <div id="mainimg" ref={this.mainimg} className="mainimg-closed" onClick={this.toggleImage} onMouseOver={this.expandContainer} onMouseOut={this.expandContainer}>
-          <img className="blog-img" src={this.props.imageFluid} />
+        <div id="mainimg" ref={this.mainimg} className="mainimg-closed" onClick={this.toggleImage} onFocus={this.toggleImage} onBlur={this.toggleImage} onMouseOver={this.expandContainer} onMouseOut={this.expandContainer} onKeyDown={this.expandContainer}>
+          <img className="blog-img" src={this.props.imageFluid} alt={this.props.descriptionText} />
         </div>
-        <div id="imgExpand" className="image-expand" onMouseOver={this.expandContainer} onMouseOut={this.expandContainer} onClick={this.toggleImage}>
+        <div id="imgExpand" className="image-expand" onClick={this.toggleImage} onFocus={this.toggleImage} onBlur={this.toggleImage} onMouseOver={this.expandContainer} onMouseOut={this.expandContainer} onKeyDown={this.expandContainer}>
             <div className="image-expand-icon"> <FontAwesomeIcon icon={faMousePointer} /> </div>
             <div id="expandText" className="image-expand-icon-closed"><p>Click to expand image.</p></div>
         </div>
