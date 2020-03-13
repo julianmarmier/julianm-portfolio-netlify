@@ -4,7 +4,7 @@ backend:
 
 media_folder: static/img
 public_folder: /img
-logo_url: /content/assets/julianm_favicon.png
+logo_url: /julianm_logo.png
 
 collections:
   - name: "blog"

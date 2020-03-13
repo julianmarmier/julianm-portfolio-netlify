@@ -5,7 +5,7 @@ module.exports = {
       name: `Julian Marmier`,
       summary: `a high-schooler from Lexington, MA`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `My portfolio`,
     siteUrl: `https://julianm.tk/`,
   },
   plugins: [
@@ -70,6 +70,6 @@ module.exports = {
     `gatsby-plugin-netlify-cms`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
 }
