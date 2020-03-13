@@ -59,7 +59,7 @@ const IndexPage = ({ data }) => {
           </div>
           <div className="grid-full" id="contact"><h1>Contact</h1></div>
           <div className="grid-left">Questions? Concerns? Feedback?<br/><b>Let me know!</b></div>
-          <div className="grid-right"><p>Send me an email at <a href="mailto"julianmarmier>julianmarmier@gmail.com</a>.</p></div>
+          <div className="grid-right"><p>Send me an email at <a href="mailto:julianmarmier@gmail.com">julianmarmier@gmail.com</a>.</p></div>
         </div>
       </Layout>
     )
