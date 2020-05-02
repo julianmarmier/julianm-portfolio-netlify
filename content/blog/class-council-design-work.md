@@ -14,4 +14,10 @@ My favorite poster was probably the one for the spikeball tournament, as I was t
 
 ![text](/img/3a747a7dcd4647219e4bbd0d0db48630.jpg)
 
-This year, the class council will be organizing the school's prom, after-prom, and more. I'm excited to create more posters and continue to experiment with different designs!
+This year, we sadly didn't have as many posters because of COVID-19, but below are some of my favorite designs:
+
+![Laser Tag poster](/img/poster-laser-tag.png)
+
+![Abbott's Frozen Custard Day](/img/abbotts-frozencustard.png)
+
+![Car Wash Poster](/img/carwash-poster.png)
