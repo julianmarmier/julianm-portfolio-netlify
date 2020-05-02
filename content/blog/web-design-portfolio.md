@@ -1,10 +1,16 @@
 ---
 title: Web Design Portfolio
 date: 2020-03-13T15:34:20.664Z
-description: 'A few of the favorite '
+description: Some websites I have made.
 thumbnail: /img/web-design-cover.png
 ---
-One of my past time hobbies is web design—I like creating page layouts, and then bringing them to life with HTML, JavaScript, and CSS. I prefer web design over traditional mobile app design, just because it's much more flexible in terms of how tons of features can be added without requiring too much work.
+One of my favorite hobbies is web design—I like creating page layouts, and then bringing them to life with HTML, JavaScript, and CSS. I prefer web design over traditional mobile app design, just because it's much more flexible in terms of how tons of features can be added without requiring too much work.
+
+## Masks for Hunger
+
+![Masks for Hunger](/img/masksforhunger.png)
+
+A friend asked me to make a website that she could use to fundraise for the [Walk for Hunger](http://www.projectbread.org/walk-for-hunger/walk-history.html) by selling masks. This allowed me to practice my React skills some more, so I gladly accepted. Check it out at [masksforhunger.com](https://masksforhunger.com).
 
 ## My portfolio
 
@@ -12,9 +18,15 @@ My biggest full-on web design project is probably the website you're looking at 
 
 ![Porfolio](/img/portfolio-comparison.png)
 
+## Foundations of Digital Art Portfolio
+
+![FoDA Webpage](/img/foda-webpage.png)
+
+I consider this a kind of artistic extension to this website. I always wanted to experiment with the new wave of simplistic website, so I tried new things when I made this. The work featured on this Check it out at [foda.julianm.tk](https://foda.julianm.tk)
+
 ## LHS Photo Club
 
-As one of the captains of the LHS Photography Club, I decided to redesign our website with a new logo and brand design. This was one my earlier projects, so it didn't turn out exactly as I'd hoped—I had built most of the website from scratch without using any backend, and since the website features a lot of photos the loading time can get pretty long. It was fun to build nonetheless, and I learned a lot from making it. Check it out at [lhsphotoclub.org](lhsphotoclub.org).
+As one of the captains of the LHS Photography Club, I decided to redesign our website with a new logo and brand design. This was one my earlier projects, so it didn't turn out exactly as I'd hoped—I had built most of the website from scratch without using any backend, and since the website features a lot of photos the loading time can get pretty long. It was fun to build nonetheless, and I learned a lot from making it. Check it out at [lhsphotoclub.org](http://lhsphotoclub.org).
 
 ![Photo Club Website Image](/img/photoclub.png)
 
