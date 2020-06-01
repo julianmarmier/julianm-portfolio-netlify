@@ -4,7 +4,9 @@ backend:
 
 media_folder: static/img
 public_folder: /img
-logo_url: /julianm_logo.png
+logo_url: /julianm_logo.svg
+site_url: https://julianm.tk/
+display_url: https://julianm.tk/
 
 collections:
   - name: "blog"
@@ -13,7 +15,7 @@ collections:
     create: true
     slug: "{{slug}}"
     editor:
-     preview: false
+     preview: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }

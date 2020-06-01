@@ -23,35 +23,33 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         <h1>{post.frontmatter.title}</h1>
 
         <section className="art-main" dangerouslySetInnerHTML={{ __html: post.html }} />
-      </div>
 
-      <nav>
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
-    </Layout>
+          <nav>
+            <ul className="post-nav">
+              <li>
+                {next && (
+                  <>
+                  <p>←</p>
+                  <Link to={next.fields.slug} className="next" rel="next">
+                    {next.frontmatter.title}
+                  </Link>
+                  </>
+                )}
+              </li>
+              <li>
+                {previous && (
+                  <>
+                  <Link to={previous.fields.slug} className="prev" rel="prev">
+                    {previous.frontmatter.title}
+                  </Link>
+                  <p>→</p>
+                  </>
+                )}
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </Layout>
   )
 }
 
