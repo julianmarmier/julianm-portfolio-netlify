@@ -6,7 +6,7 @@ thumbnail: /img/b4138f07e0e8476799fe80bc5b9b2a1f.jpg
 ---
 In the summer of 2019 I helped out at the [MIT Museum Studio and Compton Gallery](https://mitmuseum.mit.edu/mit-community/mit-museum-studio-and-compton-gallery) as an intern, a studio for students of the Art in Vision and Neuroscience and Paranormal Machines class at the Massachusetts Institute of Technology. I helped out with small tasks such as soldering and laser cutting to create demo lights, remade the entrance animation, tore down an exhibition to prepare for a new one, and designed signage while the exhibit was under repair.
 
-Among the tasks that I accomplished during my time at the gallery, my two favorites ones were probably creating the demo lights and working on the entrance animation.
+Among the tasks that I accomplished during my time at the gallery, my two favorite ones were probably creating the demo lights and working on the entrance animation.
 
 ## Demo Lights
 
