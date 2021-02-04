@@ -1,48 +1,57 @@
-/**
- * Layout component that queries for data
- * with Gatsby's StaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/static-query/
- */
-
-import React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import Helmet from "react-helmet"
 
 import Header from "./header"
-import "./layout.css"
+import "../style/layout.scss"
+import s from "../style/Switch.module.scss"
 
-if (typeof window !== "undefined") {
-  require("smooth-scroll")('a[href*="#"]');
-  require("smooth-scroll")('a[href*="/index/"]');
-}
+import Mail from "../../static/mail.svg" // this might not work, double check
 
-const Layout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
+const Layout = ({ children, windowLoc }) => {
+  const [dark, setDark] = useState(false)
+
+  function toggleDark() {
+  	dark ? setDark(false) : setDark(true);
+  }
+
+  return(
+    <StaticQuery
+      query={graphql`
+        query SiteTitleQuery {
+          site {
+            siteMetadata {
+              title
+            }
           }
         }
-      }
-    `}
-    render={data => (
-      <>
-        <Helmet>
-          <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        </Helmet>
-        <Header />
-        <main>{children}</main>
-        <footer>
-          {new Date().getFullYear()}, Julian Marmier. See the source code of this website <a href='https://github.com/jjmarm/julianm-portfolio'>here</a>.
-        </footer>
-      </>
-    )}
-  />
-)
+      `}
+      render={data => (
+        <div className={`body ${dark ? 'dark' : ''}`}>
+          <Helmet>
+            <meta name="viewport" content="width=device-width, initial-scale=1"/>
+          </Helmet>
+          <Header windowLoc={windowLoc}/>
+          <main className="main-content">{children}</main>
+          <footer>
+            <a className="mail-link" href="mailto:julianmarmier@gmail.com">
+              <Mail className="mail-icon"/>
+              julianmarmier@gmail.com
+            </a>
+            <div className={`${s.slider} ${dark ? s.dark : ''}`} onClick={toggleDark}>
+              <input type="checkbox"/>
+              <div className={s.background}>
+                <div className={s.sun}></div>
+                <div className={s.moon}></div>
+              </div>
+            </div>
+          </footer>
+        </div>
+      )}
+    />
+  )
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

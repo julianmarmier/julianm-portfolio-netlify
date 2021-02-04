@@ -1,0 +1,94 @@
+$s-width: 60px;
+$s-height: 30px;
+
+$o-dim: 20px;
+
+.slider {
+
+    cursor: pointer;
+
+  width: $s-width;
+  height: $s-height;
+  border-radius: $s-height;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+  
+  * {
+    transition: 0.3s;
+  }
+
+  div {
+    height: inherit;
+  }
+  
+  input {
+    display: none;
+  }
+  
+  .background {
+    transform: rotate(-30deg) translateY(-15px) translateX(0px);
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+   
+    .sun {
+      width: $s-width / 1.5;
+      height: 200%;
+      background-color: lightblue;
+    }
+
+    .moon {
+      width: 50%;
+      height: 300%;
+      background-color: black;
+    }
+  }
+  
+  &::after {
+    transition: all 0.3s;
+    content: '';
+    position: absolute;
+    display: inline;
+    border-radius: 100%;
+    left: ($s-height - $o-dim) / 2;
+    top: ($s-height - $o-dim) / 2;
+    height: $o-dim;
+    width: $o-dim;
+    background-color: rgb(240, 200, 0);
+    z-index: 1000;
+    box-shadow: 0 0 20px alpha(orange);
+    transform: rotateZ(-130deg);
+  }
+  
+  &.dark {
+    .sun {
+      width: 50%;
+      height: 200%;
+    }
+
+    .moon {
+      width: $s-width / 1.5;
+      height: 300%;
+    }
+    
+    &::after {
+      background-color: rgb(240, 240, 240);
+      left: $s-width - $o-dim - ($s-height - $o-dim) / 2;
+        box-shadow: inset 0px 8px #999, inset 0px 8px 1px 1px #999;
+  -moz-box-shadow: inset 0px 8px #999, inset 0px 8px 1px 1px #999;
+
+    }
+  }
+}
+
+.switch {
+  height: $o-dim;
+  width: $o-dim;
+  border-radius: $o-dim;
+  background-color: rgb(40, 50, 0);
+  
+  z-index: 1000;
+  position: relative;
+  top: 0;
+}

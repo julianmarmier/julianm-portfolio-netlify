@@ -1,0 +1,54 @@
+@use 'layout';
+
+$main: layout.$main;
+$back: layout.$back;
+    
+.header {
+    width: 100%;
+    padding: 30px;
+    display: flex;
+
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    .title {
+        font-weight: 600;
+        color: $back;
+        background-color: $main;
+        padding: 10px 20px;
+        height: auto;
+
+        margin: 0;
+    }
+
+    .nav {
+        list-style-type: none;
+        display: flex;
+        
+        li {
+            padding-left: 10px;
+
+            &.active {
+                a {
+                    // display: inline-block;
+                    // border-bottom: solid 2px $main;
+                    // line-height: 0.9;
+                    // text-shadow:
+                    //     1px 1px $back,
+                    //     1px -1px $back,
+                    //     -1px 1px $back,
+                    //     -1px -1px $back;
+
+                    text-decoration: underline;
+                }
+            }
+
+            &.artActive {
+                a {
+                    text-decoration: underline dotted;
+                }
+            }
+        }
+    }
+}

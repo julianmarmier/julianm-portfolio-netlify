@@ -2,7 +2,7 @@ import React from 'react';
 //import Img from 'gatsby-image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMousePointer } from '@fortawesome/free-solid-svg-icons';
-import './layout.css';
+import '../style/layout.scss';
 
 var opened = false;
 
