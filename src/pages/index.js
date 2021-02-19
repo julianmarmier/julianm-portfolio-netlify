@@ -1,31 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, graphql } from 'gatsby';
-//import Img from 'gatsby-image'
+import Img from 'gatsby-image'
+
 import Layout from '../components/layout';
 
 import SEO from '../components/seo';
-import '../components/index.css';
+import styles from '../style/Index.module.scss';
 
 const IndexPage = ({ data }) => {
   const posts = data.allMarkdownRemark.edges
 
+  // const imList = edges.map()
+
+  const [currentImage, setImg] = useState(false)
+
   return(
     <Layout windowLoc="index">
       <SEO title="Julian Marmier"/>
-          <div className="portfolio grid-full" id="portfolio">
-            <ul>
-              {posts.map(({ node }) => {
-                return(
-                  <Link to={node.fields.slug}><li key={node.fields.slug}>
-                    <img className="portfolio-img" alt={node.frontmatter.description} src={node.frontmatter.thumbnail}/>
-                    <h2>
-                      {node.frontmatter.title}
-                    </h2>
-                  </li></Link>
-                )
-              })}
-            </ul>
-          </div>
+        <div className={styles.mainGrid}>
+          <div className={`${styles.portfolio} ${styles.gridLeft}`} id="portfolio">
+              <ul className={styles.portfolioList}>
+                <li>
+                  <p>Title</p>
+                  <p>Year</p>
+                </li>
+                {posts.map(({ node }) => {
+                  return (
+                    <Link onMouseOut={() => {setImg(false)}} onMouseEnter={() => {setImg(node.frontmatter.thumbnail.childImageSharp.fluid)}} to={node.fields.slug}><li key={node.fields.slug}>
+                      {/* <img className="portfolio-img" alt={node.frontmatter.description} src={node.frontmatter.thumbnail}/> */}
+                      <p>
+                        {node.frontmatter.title}
+                      </p>
+                      <p>{node.frontmatter.date}</p>
+                    </li></Link>
+                  )
+                })}
+              </ul>
+            </div>
+            <div className={styles.gridRight}>
+                {
+                  currentImage &&
+                  <Img fluid={currentImage} />
+                }
+            </div>
+        </div>
       </Layout>
     )
   }
@@ -47,10 +65,16 @@ const IndexPage = ({ data }) => {
             slug
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "YYYY")
             title
             description
-            thumbnail
+            thumbnail {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }

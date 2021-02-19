@@ -12,10 +12,12 @@ $back: layout.$back;
     justify-content: space-between;
     align-items: center;
 
+    background-color: inherit;
+
     .title {
         font-weight: 600;
         color: $back;
-        background-color: $main;
+        background-color: black;
         padding: 10px 20px;
         height: auto;
 

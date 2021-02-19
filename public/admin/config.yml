@@ -22,3 +22,13 @@ collections:
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Thumbnail", name: "thumbnail", widget: "image"}
+  - name: "staticContent"
+    label: "Static Content"
+    files:
+      - { label: "In a Nutshell", name: "intro", widget: "markdown"}
+      - { label: "Present", name: "present", widget: "markdown"}
+      - label: "Past"
+        name: "past"
+        label_singular: "Past Experience"
+        widget: "list"
+        field: { label: "Experience", name: "experience", widget: "markdown" }

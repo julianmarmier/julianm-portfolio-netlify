@@ -285,7 +285,7 @@ html {
 }
 body {
   color: hsla(0, 0%, 0%, 0.8);
-  background-color: $back;
+  background-color: inherit;
   overflow: hidden;
   font-family: "HK Grotesk", helvetica, sans-serif;
   font-weight: normal;
@@ -739,7 +739,7 @@ pre tt:after {
 /* Custom Stuff Here */
 
 .main-content {
-  padding: 0 30px;
+  padding: 0;
 }
 
 @media (max-width: 860px) {

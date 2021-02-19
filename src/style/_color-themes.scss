@@ -1,0 +1,36 @@
+$default-fore: black;
+$default-back: white;
+
+$dark-fore: white;
+$dark-back: rgb(50, 50, 50);
+
+
+$themes: (
+    default: (
+        fore: black,
+        back: white
+    ),
+    dark: (
+        fore: white,
+        back: rgb(50, 50, 50)
+    )
+);
+
+@mixin themed() {
+    @each $theme, $map in $themes {
+      .theme--#{$theme} & {
+        $theme-map: () !global;
+        @each $key, $submap in $map {
+          $value: map-get(map-get($themes, $theme), '#{$key}');
+          $theme-map: map-merge($theme-map, ($key: $value)) !global;
+        }
+        @content;
+        $theme-map: null !global;
+      }
+    }
+  }
+  
+  @function t($key) {
+    @return map-get($theme-map, $key);
+  }
+  
