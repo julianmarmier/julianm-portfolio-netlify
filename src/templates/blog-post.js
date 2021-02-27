@@ -5,6 +5,8 @@ import SEO from "../components/seo"
 import Layout from '../components/layout'
 import ImagePointer from '../components/imagePointer.js'
 
+import styles from "../style/Post.module.scss"
+
 import '../components/article.css'
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
@@ -18,11 +20,21 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         description={post.frontmatter.description || post.excerpt}
       />
 
-      <div className="art-background">
-        <ImagePointer imageFluid={ post.frontmatter.thumbnail } descriptionText={ post.frontmatter.description }/>
-        <h1>{post.frontmatter.title}</h1>
+      <div className={styles.grid}>
+        <div className={`${styles.head} ${styles.full}`}>
+          <h1>{post.frontmatter.title}</h1>
+          <p>{post.frontmatter.date}</p>
+        </div>
+        <div className={`${styles.left}`}>
 
-        <section className="art-main" dangerouslySetInnerHTML={{ __html: post.html }} />
+        </div>
+        <div className={`${styles.right}`}>
+          <section className="art-main" dangerouslySetInnerHTML={{ __html: post.html }} />
+        </div>
+      </div>
+
+      <div className="art-background">
+        {/* <ImagePointer imageFluid={ post.frontmatter.thumbnail } descriptionText={ post.frontmatter.description }/> */}
 
           <nav>
             <ul className="post-nav">
@@ -67,7 +79,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "YYYY")
         description
         thumbnail {
           childImageSharp {

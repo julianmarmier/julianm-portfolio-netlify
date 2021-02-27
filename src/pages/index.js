@@ -39,8 +39,9 @@ const IndexPage = ({ data }) => {
             </div>
             <div className={styles.gridRight}>
                 {
-                  currentImage &&
+                  currentImage ?
                   <Img fluid={currentImage} />
+                  : <p>Hover over an entry.</p>
                 }
             </div>
         </div>

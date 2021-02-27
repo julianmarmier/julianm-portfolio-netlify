@@ -1,0 +1,51 @@
+.grid {
+    padding: 0 30px;
+    display: grid;
+    grid-template-columns: [left] 1fr [right] 1fr [end];
+    grid-column-gap: 20px;
+    grid-row-gap: 40px;
+
+    .full {
+        grid-column: left / end;
+
+        &.nutshell {
+            border: solid black 2px;
+            padding: 15px;
+
+            h2 {
+                font-size: 1em;
+                text-transform: uppercase;
+                margin-bottom: 20px;
+            }
+
+            p {
+                margin: 0;
+                font-size: 2rem;
+                line-height: 1.1;
+            }
+        }
+    }
+
+    .left {
+        grid-column: left / right;
+    }
+
+    .right {
+        grid-column: right / end;
+    }
+
+    a {
+        background-color: black;
+        color: white;
+        transition: color 0.3s, background-color 0.3s, padding 0.3s;
+
+        padding: 1px 5px;
+
+        &:hover {
+            background-color: white;
+            color: black;
+            padding: 1px 0;
+        }
+    }
+}
+

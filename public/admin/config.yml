@@ -3,6 +3,9 @@ backend:
   repo: julianmarmier/julianm-portfolio-netlify
   branch: remodel
 
+# name: git-gateway
+# branch: master
+
 media_folder: static/img
 public_folder: /img
 logo_url: /julianm_logo.svg
@@ -26,10 +29,14 @@ collections:
   - name: "staticContent"
     label: "Static Content"
     files:
-      - { label: "In a Nutshell", name: "intro", widget: "markdown"}
-      - { label: "Present", name: "present", widget: "markdown"}
-      - label: "Past"
-        name: "past"
-        label_singular: "Past Experience"
-        widget: "list"
-        field: { label: "Experience", name: "experience", widget: "markdown" }
+      - label: "About"
+        name: "about"
+        file: "content/static.yml"
+        fields:
+        - { label: "In a Nutshell", name: "intro", widget: "markdown"}
+        - { label: "Present", name: "present", widget: "markdown"}
+        - label: "Past"
+          name: "past"
+          label_singular: "Past Experience"
+          widget: "list"
+          field: { label: "Experience", name: "experience", widget: "markdown" }

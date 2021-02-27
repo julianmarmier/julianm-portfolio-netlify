@@ -98,6 +98,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   //   });
   // }
 
+  // For the static.yml page: 
+
+  // if (node.internal.type === `File` && node.name === `static`) {
+
+  // }
 
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode })

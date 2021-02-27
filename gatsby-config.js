@@ -31,6 +31,19 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/staticText`,
+        name: `staticText`
+      }
+    },
+    {
+      resolve: `gatsby-transformer-yaml`,
+      options: {
+        path: `./content/staticTest/`
+      }
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
