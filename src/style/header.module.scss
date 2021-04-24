@@ -1,8 +1,9 @@
 @use 'layout';
+@use 'color-themes' as tm;
 
-$main: layout.$main;
-$back: layout.$back;
-    
+$main: 'main';
+$back: 'back';
+
 .header {
     width: 100%;
     padding: 30px;
@@ -14,10 +15,12 @@ $back: layout.$back;
 
     background-color: inherit;
 
+    a.title-link {
+        
+    }
+
     .title {
         font-weight: 600;
-        color: $back;
-        background-color: black;
         padding: 10px 20px;
         height: auto;
 
@@ -48,6 +51,7 @@ $back: layout.$back;
 
             &.artActive {
                 a {
+                    text-decoration-thickness: 2px;
                     text-decoration: underline dotted;
                 }
             }

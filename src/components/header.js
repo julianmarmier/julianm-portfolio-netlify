@@ -6,7 +6,7 @@ import styles from '../style/header.module.scss'
 const Header = ({ windowLoc }) => {
     return(
         <header className={styles.header}>
-          <Link to="/">
+          <Link className={styles.titleLink} to="/">
             <p className={styles.title}>julian marmier</p>
           </Link>
           <div className={styles.nav}>

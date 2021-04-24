@@ -4,7 +4,7 @@ import React from "react"
 import ReactMarkdown from "react-markdown"
 
 import Layout from "../components/layout"
-import "../style/About.scss"
+import styles from "../style/About.module.scss"
 
 
 
@@ -12,19 +12,19 @@ const AboutPage = ({ data }) => {
     const info = data.staticTextYaml
     return (
         <Layout windowLoc="about">
-            <div className="grid">
-                <div className={`full nutshell`}>
+            <div className={styles.grid}>
+                <div className={`${styles.full} ${styles.nutshell}`}>
                     <h2>In a nutshell</h2>
                     <ReactMarkdown>{info.intro}</ReactMarkdown>
                     {/* <section dangerouslySetInnerHTML={{__html: info.intro.html}}></section> */}
                 </div>
-                <div className="left">
+                <div className={styles.left}>
                     <h2>Present</h2>
                     <ReactMarkdown>{info.present}</ReactMarkdown>
                 </div>
-                <div className={"right"}>
+                <div className={styles.right}>
                     <h2>Past</h2>
-                    <ul className={"past"}>
+                    <ul className={styles.past}>
                         {
                             info.past.map((item, i) => {
                                 return <li key={`about-list-${i}`}><ReactMarkdown>{item}</ReactMarkdown></li>
@@ -38,7 +38,7 @@ const AboutPage = ({ data }) => {
 }
 
 export const pageQuery = graphql`
-    query aboutPage {
+    query oldAboutPage {
         staticTextYaml {
             intro
             present

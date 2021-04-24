@@ -3,11 +3,11 @@ import { Link, graphql } from "gatsby"
 import SEO from "../components/seo"
 
 import Layout from '../components/layout'
-import ImagePointer from '../components/imagePointer.js'
 
 import styles from "../style/Post.module.scss"
 
 import '../components/article.css'
+import '../style/Post-themed.scss'
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -20,23 +20,21 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         description={post.frontmatter.description || post.excerpt}
       />
 
-      <div className={styles.grid}>
-        <div className={`${styles.head} ${styles.full}`}>
+      <div className={styles.mainGrid}>
+        <div className={`post-divider bold ${styles.gridFull}`}></div>
+        <div className={`${styles.gridLeft} ${styles.opening}`}>
           <h1>{post.frontmatter.title}</h1>
+          <p>{post.frontmatter.description}</p>
+        </div>
+        <div className={`${styles.gridRight} ${styles.opening}`}>
           <p>{post.frontmatter.date}</p>
         </div>
-        <div className={`${styles.left}`}>
 
-        </div>
-        <div className={`${styles.right}`}>
+        <div className={`${styles.gridFull} scroller`}>
           <section className="art-main" dangerouslySetInnerHTML={{ __html: post.html }} />
         </div>
-      </div>
 
-      <div className="art-background">
-        {/* <ImagePointer imageFluid={ post.frontmatter.thumbnail } descriptionText={ post.frontmatter.description }/> */}
-
-          <nav>
+        <nav className={`${styles.gridFull} ${styles.nav}`}>
             <ul className="post-nav">
               <li>
                 {next && (
@@ -60,7 +58,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               </li>
             </ul>
           </nav>
-        </div>
+      </div>
       </Layout>
   )
 }
