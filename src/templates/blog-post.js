@@ -1,10 +1,10 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
 import Layout from '../components/layout'
 
-import styles from "../style/Post.module.scss"
+import * as styles from "../style/Post.module.scss"
 
 import '../components/article.css'
 import '../style/Post-themed.scss'
@@ -15,12 +15,12 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
 
   return (
     <Layout windowLoc="article">
-      <SEO
+      <Seo
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
 
-      <div className={styles.mainGrid}>
+      <div className={styles.mainContent}>
         <div className={`post-divider bold ${styles.gridFull}`}></div>
         <div className={`${styles.gridLeft} ${styles.opening}`}>
           <h1>{post.frontmatter.title}</h1>
@@ -29,7 +29,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         <div className={`${styles.gridRight} ${styles.opening}`}>
           <p>{post.frontmatter.date}</p>
         </div>
-
         <div className={`${styles.gridFull} scroller`}>
           <section className="art-main" dangerouslySetInnerHTML={{ __html: post.html }} />
         </div>

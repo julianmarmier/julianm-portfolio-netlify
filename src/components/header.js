@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import React from "react"
 
-import styles from '../style/header.module.scss'
+import * as styles from '../style/header.module.scss'
 
 const Header = ({ windowLoc }) => {
     return(

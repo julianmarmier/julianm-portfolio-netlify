@@ -5,7 +5,7 @@ import Helmet from "react-helmet"
 
 import Header from "./header"
 import "../style/layout.scss"
-import s from "../style/Switch.module.scss"
+import *  as s from "../style/Switch.module.scss"
 
 import Mail from "../../static/mail.svg"
 import ThemeContext, { ThemeProvider } from "./themeContext"

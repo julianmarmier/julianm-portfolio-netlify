@@ -5,7 +5,7 @@ import Img from 'gatsby-image'
 import Layout from '../components/layout';
 
 import SEO from '../components/seo';
-import styles from '../style/Index.module.scss';
+import * as styles from '../style/Index.module.scss';
 
 const IndexPage = ({ data }) => {
   const posts = data.allMarkdownRemark.edges

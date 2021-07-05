@@ -4,7 +4,7 @@ import React from "react"
 import ReactMarkdown from "react-markdown"
 
 import Layout from "../components/layout"
-import styles from "../style/About.module.scss"
+import * as styles from "../style/About.module.scss"
 
 
 

@@ -62,14 +62,28 @@ $back: 'back';
   margin-bottom: 0;
 }
 
+.main-content {
+  flex: 0 1 500px;
+
+  padding: 0 30px;
+  
+  display: flex;
+  flex-flow: column wrap;
+
+  justify-items: stretch;
+
+}
+
 /* Grid Definitions*/
 .main-grid {
   flex: 0 1 500px;
 
+  height: 100%;
+
   padding: 0 30px;
   display: grid;
   grid-template-columns: [left] 2fr [right] 1fr;
-  // grid-template-rows: auto repeat(10, auto);
+  grid-template-rows: minmax(auto, 1fr);
   grid-column-gap: 30px;
   grid-row-gap: 20px;
   justify-items: stretch;

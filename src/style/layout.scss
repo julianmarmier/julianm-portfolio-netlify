@@ -797,9 +797,8 @@ pre tt:after {
   flex-flow: column nowrap;
 
   padding: 0;
-  flex-grow: 1;
-  flex-shrink: 1;
   width: 100%;
+  flex: 0 1 100%;
 }
 
 @media (max-width: 860px) {

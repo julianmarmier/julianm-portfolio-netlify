@@ -1,3 +1,5 @@
+@use "sass:math";
+
 $s-width: 60px;
 $s-height: 30px;
 
@@ -33,7 +35,7 @@ $o-dim: 20px;
     flex-flow: row nowrap;
    
     .sun {
-      width: $s-width / 1.5;
+      width: math.div($s-width, 1.5);
       height: 200%;
       background-color: lightblue;
     }
@@ -51,8 +53,8 @@ $o-dim: 20px;
     position: absolute;
     display: inline;
     border-radius: 100%;
-    left: ($s-height - $o-dim) / 2;
-    top: ($s-height - $o-dim) / 2;
+    left: ($s-height - $o-dim) * 0.5;
+    top: ($s-height - $o-dim) * 0.5;
     height: $o-dim;
     width: $o-dim;
     background-color: rgb(240, 200, 0);
@@ -68,13 +70,13 @@ $o-dim: 20px;
     }
 
     .moon {
-      width: $s-width / 1.5;
+      width: math.div($s-width, 1.5);
       height: 300%;
     }
     
     &::after {
       background-color: rgb(240, 240, 240);
-      left: $s-width - $o-dim - ($s-height - $o-dim) / 2;
+      left: $s-width - $o-dim - ($s-height - $o-dim) * 0.5;
         box-shadow: inset 0px 8px #999, inset 0px 8px 1px 1px #999;
   -moz-box-shadow: inset 0px 8px #999, inset 0px 8px 1px 1px #999;
 
@@ -82,7 +84,7 @@ $o-dim: 20px;
   }
 }
 
-.switch {
+.switched {
   height: $o-dim;
   width: $o-dim;
   border-radius: $o-dim;
