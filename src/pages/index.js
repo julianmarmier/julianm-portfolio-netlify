@@ -19,7 +19,7 @@ const IndexPage = ({ data }) => {
         <div className="hero"><Link to="/#portfolio" className="hero-big">Skip to the portfolio</Link><a href="/Portfolio_JulianMarmier.pdf" className="hero-big">Download the PDF version</a></div>
       </div>
       <div className="main-grid">
-        <div className="grid-left"><h2>Hi, I'm Julian Marmier, a high school senior living in Lexington, Massachusetts.</h2></div>
+        <div className="grid-left"><h2>Hi, I'm Julian Marmier, a student at <a href="https://epfl.ch">EPFL</a>.</h2></div>
         <div className="grid-right">
           Thanks for taking the time to take a look at my portfolio. There are no rules to this website—you are free to roam about and discover who I am.
           <br/>Feel free to <a href="#about">learn more about me</a>, or, if you’re in a hurry, <a href="#portfolio">skip straight to my portfolio</a>. If you have any questions or concerns, don’t hesitate to <a href="#contact">contact me</a>.
