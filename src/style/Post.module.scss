@@ -18,6 +18,7 @@ $back: 'back';
   }
 }
 
+
 .mobile-head {
   display: none;
 }
@@ -88,19 +89,24 @@ $back: 'back';
   grid-row-gap: 20px;
   justify-items: stretch;
 }
-.grid-left {
-  grid-column: 1 / 2;
 
+.grid-element {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 10px 0 ;
+}
+
+.grid-left {
   &.opening {
     justify-content: left;
   }
 }
 .grid-right {
-  grid-column: 2 / 3;
-
   &.opening {
     align-items: right;
     text-align: right;
+    font-size: 1.3rem;
   }
 }
 .grid-full {

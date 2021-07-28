@@ -4,7 +4,7 @@ $main: 'main';
 $back: 'back';
 
 .grid {
-    padding: 0 30px;
+    // padding: 0 30px;
     display: grid;
     grid-template-columns: [left] 1fr [right] 1fr [end];
     grid-column-gap: 30px;

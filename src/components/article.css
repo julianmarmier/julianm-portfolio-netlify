@@ -89,9 +89,13 @@
 
 .art-main a {
   color: #f8ba00;
+  padding: 3px 5px;
+
+  transition: color 0.3s, background-color 0.3s, padding 0.3s;
 }
 .art-main a:hover {
   color: black;
+  padding: 3px 0;
 }
 
 .art-main p {

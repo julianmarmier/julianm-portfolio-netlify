@@ -88,7 +88,7 @@ $back: 'back';
 
 /* Grid Definitions*/
 .main-grid {
-  padding: 0 30px;
+  // padding: 0 30px;
   display: grid;
   grid-template-columns: [left] 1fr [right] 1.25fr;
   // grid-template-rows: auto repeat(10, auto);

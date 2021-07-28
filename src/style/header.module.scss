@@ -9,6 +9,8 @@ $back: 'back';
     padding: 30px;
     display: flex;
 
+    flex: 0 0 auto;
+
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;

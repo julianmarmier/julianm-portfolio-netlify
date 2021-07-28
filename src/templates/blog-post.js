@@ -20,14 +20,16 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         description={post.frontmatter.description || post.excerpt}
       />
 
-      <div className={styles.mainContent}>
+      { /* <div className={styles.mainContent}> */ }
         <div className={`post-divider bold ${styles.gridFull}`}></div>
-        <div className={`${styles.gridLeft} ${styles.opening}`}>
-          <h1>{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.description}</p>
-        </div>
-        <div className={`${styles.gridRight} ${styles.opening}`}>
-          <p>{post.frontmatter.date}</p>
+        <div className={styles.gridElement}>
+          <div className={`${styles.gridLeft} ${styles.opening}`}>
+            <h1>{post.frontmatter.title}</h1>
+            <p>{post.frontmatter.description}</p>
+          </div>
+          <div className={`${styles.gridRight} ${styles.opening}`}>
+            <p>{post.frontmatter.date}</p>
+          </div>  
         </div>
         <div className={`${styles.gridFull} scroller`}>
           <section className="art-main" dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -57,7 +59,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               </li>
             </ul>
           </nav>
-      </div>
+      { /* </div> */ }
       </Layout>
   )
 }
