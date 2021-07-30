@@ -24,6 +24,7 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "string" }
+      - { label: "Thumbnail", name: "thumbnail", widget: "image"}
       - { label: "Body", name: "body", widget: "markdown" }
       - label: "Body Images"
         label_singular: "image"
@@ -32,7 +33,13 @@ collections:
         fields:
           - {label: "Image", name: "image", widget: "image"}
           - {label: "Alt text", name: "alt", widget: "string"}
-      - { label: "Thumbnail", name: "thumbnail", widget: "image"}
+      - label: "Videos"
+        label_singular: "video"
+        name: "videos"
+        widget: "list"
+        fields:
+          - {label: "YouTube Link", name: "link", widget: "string"}
+          - {label: "Alt text", name: "alt", widget: "string"}
   - name: "staticContent"
     label: "Static Content"
     files:
