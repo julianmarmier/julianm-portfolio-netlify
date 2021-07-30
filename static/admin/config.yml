@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: julianmarmier/julianm-portfolio-netlify
-  branch: remodel
+  branch: final-redesign
 
 # name: git-gateway
 # branch: master
@@ -25,6 +25,13 @@ collections:
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Body Images"
+        label_singular: "image"
+        name: "images"
+        widget: "list"
+        fields:
+          - {label: "Image", name: "image", widget: "image"}
+          - {label: "Alt text", name: "alt", widget: "string"}
       - { label: "Thumbnail", name: "thumbnail", widget: "image"}
   - name: "staticContent"
     label: "Static Content"
