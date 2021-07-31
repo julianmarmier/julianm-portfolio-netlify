@@ -7,7 +7,7 @@ images:
   - image: /img/44ceb630f2f54de3908c03035379014b.png
     alt: An image!
 videos:
-  - link: https://youtu.be/8XGkgb_Km1Q
+  - link: 8XGkgb_Km1Q
     alt: Trailer for portfolio
 ---
 Hello, this is a test!

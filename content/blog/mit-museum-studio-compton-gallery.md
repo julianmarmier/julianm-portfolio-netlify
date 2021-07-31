@@ -15,6 +15,9 @@ images:
     alt: Pieces
   - image: /img/c8b5e4a90ede4fe3af24765a42f0a5e1.jpg
     alt: Finished product
+videos:
+  - link: DhSofC8HDak
+    alt: Entrance animation
 thumbnail: /img/b4138f07e0e8476799fe80bc5b9b2a1f.jpg
 ---
 In the summer of 2019 I helped out at the [MIT Museum Studio and Compton Gallery](https://mitmuseum.mit.edu/mit-community/mit-museum-studio-and-compton-gallery) as an intern, a studio for students of the Art in Vision and Neuroscience and Paranormal Machines class at the Massachusetts Institute of Technology. I helped out with small tasks such as soldering and laser cutting to create demo lights, remade the entrance animation, tore down an exhibition to prepare for a new one, and designed signage while the exhibit was under repair.
@@ -34,7 +37,5 @@ Unfortunately 3D printing turned out to be too expensive, so what we came up wit
 Once assembled, the flashlights worked and to my suprise all of the parts fit perfectly into the laser-cut frame, which gave the product a professional look!
 
 ## Entrance Animation
-
-<iframe width="100%" height="400" src="https://youtube.com/embed/DhSofC8HDak" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 At the entrance of the studio there is a monitor that displays an animation to show passersby that they were looking into *the MIT Museum Studio*. Since the monitor was being reconfigured, I was asked to remake the animation for the studio, based on a previous one that played with a text layer in between two sheets of dots, creating an interesting effect. I experimented with scale, rotation and more to create interesting effects for the animation.
