@@ -36,14 +36,14 @@ const IndexPage = ({ data }) => {
                   )
                 })}
               </ul>
-            </div>
-            <div className={styles.gridRight}>
-                {
-                  currentImage ?
-                  <Img fluid={currentImage} />
-                  : <p>Hover over an entry.</p>
-                }
-            </div>
+          </div>
+          <div className={styles.gridRight}>
+              {
+                currentImage ?
+                <Img fluid={currentImage} />
+                : <p>Hover over an entry.</p>
+              }
+          </div>
         </div>
       </Layout>
     )

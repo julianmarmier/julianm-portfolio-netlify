@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import Seo from "../components/seo"
+import Lightbox from "../components/lightbox"
 
 import Layout from '../components/layout'
 
@@ -32,9 +33,20 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </div>  
         </div>
         <div className={`${styles.gridFull} scroller`}>
-          <section className="art-main" dangerouslySetInnerHTML={{ __html: post.html }} />
+          <div className={`${styles.gridLeft}`}>
+            <section className="art-main" dangerouslySetInnerHTML={{ __html: post.html }} />
+          </div>
+          <div className={`${styles.gridRight}`}>
+            {
+              <Lightbox images={post.frontmatter.images} videos={post.frontmatter.videos}/>
+              /* post.frontmatter.images.map((img) => {
+                // img.alt - image alt text
+                // img.image – Gatsby Image
+                // idea – inside <Lightbox/> component include both an inline version as well as a fullscreen version, 
+              }) */
+            }
+          </div>
         </div>
-
         <nav className={`${styles.gridFull} ${styles.nav}`}>
             <ul className="post-nav">
               <li>
@@ -86,6 +98,20 @@ export const pageQuery = graphql`
               ...GatsbyImageSharpFluid
             }
           }
+        }
+        images {
+          alt
+          image {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+        videos {
+          alt
+          link
         }
       }
     }
