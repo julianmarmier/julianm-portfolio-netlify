@@ -4,7 +4,7 @@ import Img from 'gatsby-image'
 
 import Layout from '../components/layout';
 
-import SEO from '../components/seo';
+import Seo from '../components/seo';
 import * as styles from '../style/Index.module.scss';
 
 const IndexPage = ({ data }) => {
@@ -16,26 +16,26 @@ const IndexPage = ({ data }) => {
 
   return(
     <Layout windowLoc="index">
-      <SEO title="Julian Marmier"/>
+      <Seo title="Julian Marmier"/>
         <div className={styles.mainGrid}>
           <div className={`${styles.portfolio} ${styles.gridLeft}`} id="portfolio">
-              <ul className={styles.portfolioList}>
-                <li>
-                  <p>Title</p>
-                  <p>Year</p>
-                </li>
-                {posts.map(({ node }) => {
-                  return (
-                    <Link onMouseOut={() => {setImg(false)}} onMouseEnter={() => {setImg(node.frontmatter.thumbnail.childImageSharp.fluid)}} to={node.fields.slug}><li key={node.fields.slug}>
-                      {/* <img className="portfolio-img" alt={node.frontmatter.description} src={node.frontmatter.thumbnail}/> */}
-                      <p>
-                        {node.frontmatter.title}
-                      </p>
-                      <p>{node.frontmatter.date}</p>
-                    </li></Link>
-                  )
-                })}
-              </ul>
+            <ul className={styles.portfolioList}>
+              <li>
+                <p>Title</p>
+                <p>Year</p>
+              </li>
+              {posts.map(({ node }) => {
+                return (
+                  <Link onMouseOut={() => {setImg(false)}} onMouseEnter={() => {setImg(node.frontmatter.thumbnail.childImageSharp.fluid)}} to={node.fields.slug}><li key={node.fields.slug}>
+                    {/* <img className="portfolio-img" alt={node.frontmatter.description} src={node.frontmatter.thumbnail}/> */}
+                    <p>
+                      {node.frontmatter.title}
+                    </p>
+                    <p>{node.frontmatter.date}</p>
+                  </li></Link>
+                )
+              })}
+            </ul>
           </div>
           <div className={styles.gridRight}>
               {

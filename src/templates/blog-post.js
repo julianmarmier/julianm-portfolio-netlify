@@ -32,11 +32,11 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             <p>{post.frontmatter.date}</p>
           </div>  
         </div>
-        <div className={`${styles.gridFull} scroller`}>
-          <div className={`${styles.gridLeft}`}>
+        <div className={`${styles.gridTwoCol}`}>
+          <div className={`${styles.gridLeft} grid-left-item scroller`}>
             <section className="art-main" dangerouslySetInnerHTML={{ __html: post.html }} />
           </div>
-          <div className={`${styles.gridRight}`}>
+          <div className={`${styles.gridRight} scroller`}>
             {
               <Lightbox images={post.frontmatter.images} videos={post.frontmatter.videos}/>
               /* post.frontmatter.images.map((img) => {
@@ -102,6 +102,7 @@ export const pageQuery = graphql`
         images {
           alt
           image {
+            id
             childImageSharp {
               fluid {
                 ...GatsbyImageSharpFluid
