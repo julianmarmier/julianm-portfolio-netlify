@@ -2,6 +2,7 @@
 
 $main: "main";
 $back: "back";
+$imBorder: "imBorder";
 
 .scroller {
   flex: 1;
@@ -40,11 +41,19 @@ $back: "back";
     }
   }
 
+  .scroller {
+    li {
+      @include tm.themed() {
+        border-color: tm.t($imBorder)
+      }
+    }
+  }
+
   .post-divider {
     @include tm.themed() {
       border-color: tm.t($main)
     }
-  
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -57,5 +66,25 @@ $back: "back";
   
     &.bold {
       border-width: 3px;
+    }
+  }
+
+  .post-nav {
+    @include tm.themed() {
+      color: tm.t($main)
+    }
+
+    margin-top: 20px;
+    margin-left: 0;
+    font-size: 1.5em;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    list-style: none;
+    color: white;
+    padding: 0;
+    
+    a {
+      margin: 0;
     }
   }

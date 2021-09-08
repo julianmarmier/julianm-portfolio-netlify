@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import ReactMarkdown from "react-markdown"
+
 import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image'
 
@@ -18,11 +20,21 @@ const IndexPage = ({ data }) => {
     <Layout windowLoc="index">
       <Seo title="Julian Marmier"/>
         <div className={styles.mainGrid}>
+        <div className={`${styles.gridFull} nutshell ${styles.introBlock}`}>
+          <div>
+            <h2>In a nutshell</h2>
+            <ReactMarkdown>{data.staticTextYaml.intro}</ReactMarkdown>
+          </div>
+          <Link className={styles.link} to="/about">
+            <span>Read the rest</span>
+            <span>→</span>
+          </Link>
+          </div>
           <div className={`${styles.portfolio} ${styles.gridLeft}`} id="portfolio">
             <ul className={styles.portfolioList}>
-              <li>
-                <p>Title</p>
-                <p>Year</p>
+              <li className={styles.titleBar}>
+                <p>PROJECT</p>
+                <p>YEAR</p>
               </li>
               {posts.map(({ node }) => {
                 return (
@@ -43,6 +55,13 @@ const IndexPage = ({ data }) => {
                 <Img fluid={currentImage} />
                 : <p>Hover over an entry.</p>
               }
+          </div>
+          <div className={`${styles.gridFull} ${styles.gridBottom}`}>
+            <ul className={styles.links}>
+              <a href="/julianm-portfolio-short.pdf">Download Shortened Portfolio</a>
+              <a href="/julianm-portfolio.pdf">Download Full Portfolio</a>
+              <a href="/julianm-cv.pdf">Download CV</a>
+            </ul>
           </div>
         </div>
       </Layout>
@@ -79,6 +98,11 @@ const IndexPage = ({ data }) => {
           }
         }
       }
+    }
+    staticTextYaml {
+      intro
+      present
+      past
     }
   }
   `

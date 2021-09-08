@@ -3,6 +3,24 @@
 $main: 'main';
 $back: 'back';
 
+.nutshell {
+    @include tm.themed() {
+        border: solid tm.t($main) 3px;
+    }
+
+    h2 {
+        font-size: 0.8em;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+    }
+
+    p {
+        margin: 0;
+        font-size: 1.5em;
+        line-height: 1.1;
+    }
+}
+
 .grid {
     // padding: 0 30px;
     display: grid;

@@ -7,12 +7,14 @@ $dark-back: rgb(50, 50, 50);
 $themes: (
     default: (
         main: black,
+        imBorder: black,
         back: white,
         footBorder: none,
     ),
     dark: (
         main: white,
         back: rgb(50, 50, 50),
+        imBorder: lightgray,
         footBorder: solid white 3px,
     )
 );
