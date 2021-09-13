@@ -45,7 +45,7 @@ collections:
     files:
       - label: "About"
         name: "about"
-        file: "content/static.yml"
+        file: "content/staticText/static.yml"
         fields:
         - { label: "In a Nutshell", name: "intro", widget: "markdown"}
         - { label: "Present", name: "present", widget: "markdown"}
