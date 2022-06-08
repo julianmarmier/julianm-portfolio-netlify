@@ -35,6 +35,7 @@ class Header extends React.Component {
     super(props);
     this.clickedButton = this.clickedButton.bind(this);
     this.hoverTitle = this.hoverTitle.bind(this);
+    this.headerType = this.props.type;
   }
 
   clickedButton() {
@@ -54,7 +55,11 @@ class Header extends React.Component {
         <header className="header">
           <div className="headerwrapper">
             <Link to="/" id="headerwrapper" className="header-top">
-              <p id="headertitle" className="header-title">julian marmier</p>
+              <p id="headertitle" className="header-title">
+                {
+                  this.headerType === "design" ? "julian marmier design" : "julian marmier"
+                }
+              </p>
             </Link>
             <div className="header-menu" onClick={this.clickedButton}><FontAwesomeIcon id="openclosebutton" icon={faBars} /></div>
           </div>

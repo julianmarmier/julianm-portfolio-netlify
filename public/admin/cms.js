@@ -13,8 +13,7 @@ function _interopRequireDefault(obj) {
   };
 }
 
-module.exports = _interopRequireDefault;
-module.exports.default = module.exports, module.exports.__esModule = true;
+module.exports = _interopRequireDefault, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
 
@@ -1612,6 +1611,27 @@ ansiHTML.reset()
 
 /***/ }),
 
+/***/ "./node_modules/ansi-regex/index.js":
+/*!******************************************!*\
+  !*** ./node_modules/ansi-regex/index.js ***!
+  \******************************************/
+/***/ (function(module) {
+
+"use strict";
+
+
+module.exports = ({onlyFirst = false} = {}) => {
+	const pattern = [
+		'[\\u001B\\u009B][[\\]()#;?]*(?:(?:(?:(?:;[-a-zA-Z\\d\\/#&.:=?%@~_]+)*|[a-zA-Z\\d]+(?:;[-a-zA-Z\\d\\/#&.:=?%@~_]*)*)?\\u0007)',
+		'(?:(?:\\d{1,4}(?:;\\d{0,4})*)?[\\dA-PR-TZcf-ntqry=><~]))'
+	].join('|');
+
+	return new RegExp(pattern, onlyFirst ? undefined : 'g');
+};
+
+
+/***/ }),
+
 /***/ "./node_modules/gatsby/cache-dir/emitter.js":
 /*!**************************************************!*\
   !*** ./node_modules/gatsby/cache-dir/emitter.js ***!
@@ -1623,7 +1643,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var mitt__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mitt */ "./node_modules/mitt/dist/mitt.es.js");
 
 
-const emitter = (0,mitt__WEBPACK_IMPORTED_MODULE_0__.default)()
+const emitter = (0,mitt__WEBPACK_IMPORTED_MODULE_0__["default"])()
 /* harmony default export */ __webpack_exports__["default"] = (emitter);
 
 
@@ -1883,17 +1903,18 @@ exports.showCompileError = showCompileError;
 exports.showRuntimeErrors = showRuntimeErrors;
 exports.isWebpackCompileError = isWebpackCompileError;
 exports.handleRuntimeError = handleRuntimeError;
-window._gatsbyEvents = window._gatsbyEvents || [];
+// Use `self` here instead of `window` so it works in non-window environments (like Workers)
+self._gatsbyEvents = self._gatsbyEvents || [];
 
 function clearCompileError() {
-  window._gatsbyEvents.push([`FAST_REFRESH`, {
+  self._gatsbyEvents.push([`FAST_REFRESH`, {
     action: `CLEAR_COMPILE_ERROR`
   }]);
 }
 
 function clearRuntimeErrors(dismissOverlay) {
   if (typeof dismissOverlay === `undefined` || dismissOverlay) {
-    window._gatsbyEvents.push([`FAST_REFRESH`, {
+    self._gatsbyEvents.push([`FAST_REFRESH`, {
       action: `CLEAR_RUNTIME_ERRORS`
     }]);
   }
@@ -1904,7 +1925,7 @@ function showCompileError(message) {
     return;
   }
 
-  window._gatsbyEvents.push([`FAST_REFRESH`, {
+  self._gatsbyEvents.push([`FAST_REFRESH`, {
     action: `SHOW_COMPILE_ERROR`,
     payload: message
   }]);
@@ -1915,7 +1936,7 @@ function showRuntimeErrors(errors) {
     return;
   }
 
-  window._gatsbyEvents.push([`FAST_REFRESH`, {
+  self._gatsbyEvents.push([`FAST_REFRESH`, {
     action: `SHOW_RUNTIME_ERRORS`,
     payload: errors
   }]);
@@ -1927,7 +1948,7 @@ function isWebpackCompileError(error) {
 
 function handleRuntimeError(error) {
   if (error && !isWebpackCompileError(error)) {
-    window._gatsbyEvents.push([`FAST_REFRESH`, {
+    self._gatsbyEvents.push([`FAST_REFRESH`, {
       action: `HANDLE_RUNTIME_ERROR`,
       payload: [error]
     }]);
@@ -2719,30 +2740,9 @@ if (false) {} else {
 
 "use strict";
 
-const ansiRegex = __webpack_require__(/*! ansi-regex */ "./node_modules/strip-ansi/node_modules/ansi-regex/index.js");
+const ansiRegex = __webpack_require__(/*! ansi-regex */ "./node_modules/ansi-regex/index.js");
 
 module.exports = string => typeof string === 'string' ? string.replace(ansiRegex(), '') : string;
-
-
-/***/ }),
-
-/***/ "./node_modules/strip-ansi/node_modules/ansi-regex/index.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/strip-ansi/node_modules/ansi-regex/index.js ***!
-  \******************************************************************/
-/***/ (function(module) {
-
-"use strict";
-
-
-module.exports = ({onlyFirst = false} = {}) => {
-	const pattern = [
-		'[\\u001B\\u009B][[\\]()#;?]*(?:(?:(?:[a-zA-Z\\d]*(?:;[-a-zA-Z\\d\\/#&.:=?%@~_]*)*)?\\u0007)',
-		'(?:(?:\\d{1,4}(?:;\\d{0,4})*)?[\\dA-PR-TZcf-ntqry=><~]))'
-	].join('|');
-
-	return new RegExp(pattern, onlyFirst ? undefined : 'g');
-};
 
 
 /***/ }),
@@ -2842,7 +2842,7 @@ module.exports = netlifyIdentity;
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	!function() {
-/******/ 		__webpack_require__.h = function() { return "c80abda67a78236e8143"; }
+/******/ 		__webpack_require__.h = function() { return "a086521692225db3f125"; }
 /******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
@@ -3124,8 +3124,12 @@ module.exports = netlifyIdentity;
 /******/ 		
 /******/ 		function setStatus(newStatus) {
 /******/ 			currentStatus = newStatus;
+/******/ 			var results = [];
+/******/ 		
 /******/ 			for (var i = 0; i < registeredStatusHandlers.length; i++)
-/******/ 				registeredStatusHandlers[i].call(null, newStatus);
+/******/ 				results[i] = registeredStatusHandlers[i].call(null, newStatus);
+/******/ 		
+/******/ 			return Promise.all(results);
 /******/ 		}
 /******/ 		
 /******/ 		function trackBlockingPromise(promise) {
@@ -3134,7 +3138,7 @@ module.exports = netlifyIdentity;
 /******/ 					setStatus("prepare");
 /******/ 					blockingPromises.push(promise);
 /******/ 					waitForBlockingPromises(function () {
-/******/ 						setStatus("ready");
+/******/ 						return setStatus("ready");
 /******/ 					});
 /******/ 					return promise;
 /******/ 				case "prepare":
@@ -3158,47 +3162,51 @@ module.exports = netlifyIdentity;
 /******/ 			if (currentStatus !== "idle") {
 /******/ 				throw new Error("check() is only allowed in idle status");
 /******/ 			}
-/******/ 			setStatus("check");
-/******/ 			return __webpack_require__.hmrM().then(function (update) {
-/******/ 				if (!update) {
-/******/ 					setStatus(applyInvalidatedModules() ? "ready" : "idle");
-/******/ 					return null;
-/******/ 				}
-/******/ 		
-/******/ 				setStatus("prepare");
-/******/ 		
-/******/ 				var updatedModules = [];
-/******/ 				blockingPromises = [];
-/******/ 				currentUpdateApplyHandlers = [];
-/******/ 		
-/******/ 				return Promise.all(
-/******/ 					Object.keys(__webpack_require__.hmrC).reduce(function (
-/******/ 						promises,
-/******/ 						key
-/******/ 					) {
-/******/ 						__webpack_require__.hmrC[key](
-/******/ 							update.c,
-/******/ 							update.r,
-/******/ 							update.m,
-/******/ 							promises,
-/******/ 							currentUpdateApplyHandlers,
-/******/ 							updatedModules
+/******/ 			return setStatus("check")
+/******/ 				.then(__webpack_require__.hmrM)
+/******/ 				.then(function (update) {
+/******/ 					if (!update) {
+/******/ 						return setStatus(applyInvalidatedModules() ? "ready" : "idle").then(
+/******/ 							function () {
+/******/ 								return null;
+/******/ 							}
 /******/ 						);
-/******/ 						return promises;
-/******/ 					},
-/******/ 					[])
-/******/ 				).then(function () {
-/******/ 					return waitForBlockingPromises(function () {
-/******/ 						if (applyOnUpdate) {
-/******/ 							return internalApply(applyOnUpdate);
-/******/ 						} else {
-/******/ 							setStatus("ready");
+/******/ 					}
 /******/ 		
-/******/ 							return updatedModules;
-/******/ 						}
+/******/ 					return setStatus("prepare").then(function () {
+/******/ 						var updatedModules = [];
+/******/ 						blockingPromises = [];
+/******/ 						currentUpdateApplyHandlers = [];
+/******/ 		
+/******/ 						return Promise.all(
+/******/ 							Object.keys(__webpack_require__.hmrC).reduce(function (
+/******/ 								promises,
+/******/ 								key
+/******/ 							) {
+/******/ 								__webpack_require__.hmrC[key](
+/******/ 									update.c,
+/******/ 									update.r,
+/******/ 									update.m,
+/******/ 									promises,
+/******/ 									currentUpdateApplyHandlers,
+/******/ 									updatedModules
+/******/ 								);
+/******/ 								return promises;
+/******/ 							},
+/******/ 							[])
+/******/ 						).then(function () {
+/******/ 							return waitForBlockingPromises(function () {
+/******/ 								if (applyOnUpdate) {
+/******/ 									return internalApply(applyOnUpdate);
+/******/ 								} else {
+/******/ 									return setStatus("ready").then(function () {
+/******/ 										return updatedModules;
+/******/ 									});
+/******/ 								}
+/******/ 							});
+/******/ 						});
 /******/ 					});
 /******/ 				});
-/******/ 			});
 /******/ 		}
 /******/ 		
 /******/ 		function hotApply(options) {
@@ -3227,21 +3235,20 @@ module.exports = netlifyIdentity;
 /******/ 				.filter(Boolean);
 /******/ 		
 /******/ 			if (errors.length > 0) {
-/******/ 				setStatus("abort");
-/******/ 				return Promise.resolve().then(function () {
+/******/ 				return setStatus("abort").then(function () {
 /******/ 					throw errors[0];
 /******/ 				});
 /******/ 			}
 /******/ 		
 /******/ 			// Now in "dispose" phase
-/******/ 			setStatus("dispose");
+/******/ 			var disposePromise = setStatus("dispose");
 /******/ 		
 /******/ 			results.forEach(function (result) {
 /******/ 				if (result.dispose) result.dispose();
 /******/ 			});
 /******/ 		
 /******/ 			// Now in "apply" phase
-/******/ 			setStatus("apply");
+/******/ 			var applyPromise = setStatus("apply");
 /******/ 		
 /******/ 			var error;
 /******/ 			var reportError = function (err) {
@@ -3260,25 +3267,27 @@ module.exports = netlifyIdentity;
 /******/ 				}
 /******/ 			});
 /******/ 		
-/******/ 			// handle errors in accept handlers and self accepted module load
-/******/ 			if (error) {
-/******/ 				setStatus("fail");
-/******/ 				return Promise.resolve().then(function () {
-/******/ 					throw error;
-/******/ 				});
-/******/ 			}
-/******/ 		
-/******/ 			if (queuedInvalidatedModules) {
-/******/ 				return internalApply(options).then(function (list) {
-/******/ 					outdatedModules.forEach(function (moduleId) {
-/******/ 						if (list.indexOf(moduleId) < 0) list.push(moduleId);
+/******/ 			return Promise.all([disposePromise, applyPromise]).then(function () {
+/******/ 				// handle errors in accept handlers and self accepted module load
+/******/ 				if (error) {
+/******/ 					return setStatus("fail").then(function () {
+/******/ 						throw error;
 /******/ 					});
-/******/ 					return list;
-/******/ 				});
-/******/ 			}
+/******/ 				}
 /******/ 		
-/******/ 			setStatus("idle");
-/******/ 			return Promise.resolve(outdatedModules);
+/******/ 				if (queuedInvalidatedModules) {
+/******/ 					return internalApply(options).then(function (list) {
+/******/ 						outdatedModules.forEach(function (moduleId) {
+/******/ 							if (list.indexOf(moduleId) < 0) list.push(moduleId);
+/******/ 						});
+/******/ 						return list;
+/******/ 					});
+/******/ 				}
+/******/ 		
+/******/ 				return setStatus("idle").then(function () {
+/******/ 					return outdatedModules;
+/******/ 				});
+/******/ 			});
 /******/ 		}
 /******/ 		
 /******/ 		function applyInvalidatedModules() {
@@ -3456,7 +3465,7 @@ module.exports = netlifyIdentity;
 /******/ 		// object to store loaded and loading chunks
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
-/******/ 		var installedChunks = {
+/******/ 		var installedChunks = __webpack_require__.hmrS_jsonp = __webpack_require__.hmrS_jsonp || {
 /******/ 			"cms": 0
 /******/ 		};
 /******/ 		

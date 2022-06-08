@@ -18,7 +18,7 @@ if (typeof window !== "undefined") {
   require("smooth-scroll")('a[href*="/index/"]');
 }
 
-const Layout = ({ children }) => (
+const Layout = ({ children, type }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -34,7 +34,7 @@ const Layout = ({ children }) => (
         <Helmet>
           <meta name="viewport" content="width=device-width, initial-scale=1"/>
         </Helmet>
-        <Header />
+        <Header type={type}/>
         <main>{children}</main>
         <footer>
           {new Date().getFullYear()}, Julian Marmier. See the source code of this website <a href='https://github.com/jjmarm/julianm-portfolio'>here</a>.
@@ -46,6 +46,7 @@ const Layout = ({ children }) => (
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  type: PropTypes.string.isRequired
 }
 
 export default Layout

@@ -14,6 +14,15 @@
   max-width: 600px;
 }
 
+.opening > h1.design {
+  line-height: 75px;
+  color: white;
+  font-weight: 600;
+  font-size: 75px;
+  max-width: 1000px;
+  font-weight: 300;
+}
+
 .mobile-head {
   display: none;
 }
