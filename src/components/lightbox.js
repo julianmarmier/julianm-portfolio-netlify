@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 
 import * as styles from '../style/Lightbox.module.scss'
 
@@ -10,7 +10,7 @@ const Lightbox = (props) => {
         <ul className={styles.list}>
             { props.images &&
                 props.images.map((img) => (
-                    <li key={img.id}><Img fluid={img.image.childImageSharp.fluid}/></li>
+                    <li key={img.id}><GatsbyImage image={img.image.childImageSharp.gatsbyImageData} /></li>
                 ))
             }
             { props.videos && 
@@ -19,7 +19,7 @@ const Lightbox = (props) => {
                 ))  
             }
         </ul>
-    )
+    );
 }
 
 export default Lightbox

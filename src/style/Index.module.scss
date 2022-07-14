@@ -131,13 +131,14 @@ $back: 'back';
 .main-grid {
   // padding: 0 30px;
   height: 100%;
+  overflow: auto;
   display: grid;
   grid-template-columns: [left] 1fr [right] 1.25fr;
   // grid-template-rows: auto repeat(10, auto);
   column-gap: 30px;
   row-gap: 20px;
   justify-items: stretch;
-  grid-template-rows: min-content 1fr min-content;
+  grid-template-rows: auto minmax(0, 1fr) auto;
 
   h1 {
     border: solid gray;
@@ -151,6 +152,7 @@ $back: 'back';
 }
 .grid-right {
   grid-column: 2 / 3;
+  
 }
 .grid-full {
   grid-column: 1 / 3;

@@ -78,45 +78,40 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
 
 export default BlogPostTemplate
 
-export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        title
-      }
+export const pageQuery = graphql`query BlogPostBySlug($slug: String!) {
+  site {
+    siteMetadata {
+      title
     }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      id
-      html
-      frontmatter {
-        title
-        date(formatString: "YYYY")
-        description
-        thumbnail {
+  }
+  markdownRemark(fields: {slug: {eq: $slug}}) {
+    id
+    html
+    frontmatter {
+      title
+      date(formatString: "YYYY")
+      description
+      thumbnail {
+        childImageSharp {
+          gatsbyImageData(layout: FULL_WIDTH)
+        }
+      }
+      images {
+        alt
+        image {
+          id
           childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
           }
         }
-        images {
-          alt
-          image {
-            id
-            childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-        videos {
-          alt
-          link
-        }
+      }
+      videos {
+        alt
+        link
       }
     }
   }
+}
 `
 
 // excerpt(pruneLength: 160)

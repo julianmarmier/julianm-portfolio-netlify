@@ -6,6 +6,7 @@ $back: 'back';
 
 .header {
     width: 100%;
+    grid-area: header;
     padding: 30px;
     display: flex;
 
@@ -16,10 +17,6 @@ $back: 'back';
     align-items: center;
 
     background-color: inherit;
-
-    a.title-link {
-        
-    }
 
     .title {
         font-weight: 600;

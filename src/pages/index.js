@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ReactMarkdown from "react-markdown"
 
 import { Link, graphql } from 'gatsby';
-import Img from 'gatsby-image'
+import { GatsbyImage } from "gatsby-plugin-image";
 
 import Layout from '../components/layout';
 
@@ -16,7 +16,7 @@ const IndexPage = ({ data }) => {
 
   const [currentImage, setImg] = useState(false)
 
-  return(
+  return (
     <Layout windowLoc="index">
       <Seo title="Julian Marmier"/>
         <div className={styles.mainGrid}>
@@ -38,22 +38,22 @@ const IndexPage = ({ data }) => {
               </li>
               {posts.map(({ node }) => {
                 return (
-                  <Link onMouseOut={() => {setImg(false)}} onMouseEnter={() => {setImg(node.frontmatter.thumbnail.childImageSharp.fluid)}} to={node.fields.slug}><li key={node.fields.slug}>
+                  <Link onMouseOut={() => {setImg(false)}} onMouseOver={() => {setImg(node.frontmatter.thumbnail.childImageSharp.gatsbyImageData)}} to={node.fields.slug}><li key={node.fields.slug}>
                     {/* <img className="portfolio-img" alt={node.frontmatter.description} src={node.frontmatter.thumbnail}/> */}
                     <p>
                       {node.frontmatter.title}
                     </p>
                     <p>{node.frontmatter.date}</p>
                   </li></Link>
-                )
+                );
               })}
             </ul>
           </div>
           <div className={styles.gridRight}>
               {
                 currentImage ?
-                <Img fluid={currentImage} />
-                : <p>Hover over an entry.</p>
+                <GatsbyImage image={currentImage} />
+                : <p></p>
               }
           </div>
           <div className={`${styles.gridFull} ${styles.gridBottom}`}>
@@ -65,44 +65,41 @@ const IndexPage = ({ data }) => {
           </div>
         </div>
       </Layout>
-    )
+  );
   }
 
   export default IndexPage
 
-  export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
+  export const pageQuery = graphql`{
+  site {
+    siteMetadata {
+      title
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "YYYY")
-            title
-            description
-            thumbnail {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
-              }
+  }
+  allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}) {
+    edges {
+      node {
+        excerpt
+        fields {
+          slug
+        }
+        frontmatter {
+          date(formatString: "YYYY")
+          title
+          description
+          thumbnail {
+            childImageSharp {
+              gatsbyImageData(layout: FULL_WIDTH)
             }
           }
         }
       }
     }
-    staticTextYaml {
-      intro
-      present
-      past
-    }
   }
-  `
+  staticTextYaml {
+    intro
+    present
+    past
+  }
+}
+`

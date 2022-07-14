@@ -1,4 +1,12 @@
 {
     "window.autoDetectColorScheme": true,
-    "workbench.colorTheme": "Visual Studio Light"
+    "workbench.colorTheme": "Default Dark+",
+    "editor.semanticTokenColorCustomizations": {
+        "rules": {
+            "*.deprecated": {
+                "foreground": "#808080",
+                "italic": true
+            }
+        }
+    }
 }
