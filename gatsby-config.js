@@ -9,6 +9,7 @@ module.exports = {
     siteUrl: `https://julianm.tk/`,
   },
   plugins: [
+    `gatsby-plugin-pnpm`, 
     {
       resolve: `gatsby-source-filesystem`,
       options: {

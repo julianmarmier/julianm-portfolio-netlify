@@ -13,24 +13,27 @@ const AboutPage = ({ data }) => {
     return (
         <Layout windowLoc="about">
             <div className="grid">
-                <div className={`full nutshell`}>
-                    <h2>In a nutshell</h2>
-                    <ReactMarkdown>{info.intro}</ReactMarkdown>
-                    {/* <section dangerouslySetInnerHTML={{__html: info.intro.html}}></section> */}
+                <div className={"left"}>
+                    <div className="bio">
+                        <ReactMarkdown>{info.bio}</ReactMarkdown>
+                        {/* <section dangerouslySetInnerHTML={{__html: info.intro.html}}></section> */}
+                    </div>
                 </div>
-                <div className="left">
-                    <h2>Present</h2>
-                    <ReactMarkdown>{info.present}</ReactMarkdown>
-                </div>
-                <div className={"right"}>
-                    <h2>Past</h2>
-                    <ul className={"past"}>
-                        {
-                            info.past.map((item, i) => {
-                                return <li key={`about-list-${i}`}><ReactMarkdown>{item}</ReactMarkdown></li>
-                            })
-                        }
-                    </ul>
+                <div className="right">
+                    <div className={"present"}>
+                        <h2>Present</h2>
+                        <ReactMarkdown>{info.present}</ReactMarkdown>
+                    </div>
+                    <div className="past">
+                        <h2>Past</h2>
+                        <ul className={"past-list"}>
+                            {
+                                info.past.map((item, i) => {
+                                    return <li key={`about-list-${i}`}><ReactMarkdown>{item}</ReactMarkdown></li>
+                                })
+                            }
+                        </ul>
+                    </div>
                 </div>
             </div>
         </Layout>
@@ -40,7 +43,7 @@ const AboutPage = ({ data }) => {
 export const pageQuery = graphql`
     query aboutPage {
         staticTextYaml {
-            intro
+            bio
             present
             past
         }

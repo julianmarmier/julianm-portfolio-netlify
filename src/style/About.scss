@@ -53,23 +53,46 @@ $back: 'back';
 
     .left {
         grid-column: left / right;
+        
+        .bio {
+            font-size: 1.3rem;
+        }
     }
 
     .right {
         grid-column: right / end;
 
-        .past {
-            padding: 0;
-            margin: 0;
+        .present {
+            @include tm.themed() {
+                border: solid tm.t($main) 2px;
+            }
+            padding: 15px; 
 
-            li {
+            p {
                 margin: 0;
-                padding: 10px 0;
-                list-style-type: none;
-                border-bottom: 1px solid;
+            }
+        }
 
-                @include tm.themed() {
-                    border-bottom-color: tm.t($main);
+        .past {
+            padding: 15px;
+
+            h2 {
+                margin: 10px 0;
+            }
+
+            .past-list {
+                padding: 0;
+                margin: 0;
+    
+                li {
+                    margin: 0;
+                    padding: 10px 0;
+                    list-style-type: none;
+                    border-bottom: 1px solid;
+    
+                    @include tm.themed() {
+                        border-bottom-color: tm.t($main);
+                    }
                 }
             }
         }

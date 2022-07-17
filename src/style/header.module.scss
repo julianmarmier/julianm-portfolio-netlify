@@ -17,6 +17,7 @@ $back: 'back';
     align-items: center;
 
     background-color: inherit;
+    transition: background-color 0.1s;
 
     .title {
         font-weight: 600;

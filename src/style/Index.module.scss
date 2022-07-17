@@ -40,9 +40,14 @@ $back: 'back';
   padding: 5px 0;
   margin: 0 0 20px 0;
   border-top: solid 1px;
+  
+  display: flex;
+  align-items: flex-start;
 
   a {
     padding-right: 20px;
+    display: flex;
+    align-items: center;
   }
 }
 
@@ -63,6 +68,7 @@ $back: 'back';
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
+    padding: 0 20px;
   }
 
   span {
@@ -113,9 +119,11 @@ $back: 'back';
     }
   }
 
-  a:hover {
-    p {
-      font-weight: 400;
+  a {
+    &:hover {
+      p {
+        font-weight: 400;
+      }
     }
   }
 }
@@ -149,10 +157,15 @@ $back: 'back';
 }
 .grid-left {
   grid-column: 1 / 2;
+  overflow: scroll;
 }
 .grid-right {
   grid-column: 2 / 3;
-  
+  overflow: hidden;
+
+  .grid-image {
+    height: 100%;
+  }
 }
 .grid-full {
   grid-column: 1 / 3;
@@ -187,12 +200,26 @@ $back: 'back';
 
 @media (max-width: 860px) {
   /* Switch to single-column */
-  .main-grid {
-    grid-template-columns: [left] 1fr;
-    grid-template-rows: auto repeat(10, auto);
+  .intro-block {
+    flex-flow: column nowrap;
+
+    .link {
+      border-left: 0;
+      border-top: 2px dotted;
+      width: 100%;
+      height: auto;
+      padding: 10px 0;
+    }
   }
-  .grid-left, .grid-full, .grid-right {
-    grid-column: 1;
+
+  .grid-full.intro-block {
+    grid-column: 1 / 2;
+  }
+  .grid-left {
+    grid-column: 2 / 3;
+  }
+  .grid-right {
+    display: none;
   }
   .opening > h1 {
     font-size: 80px;
@@ -207,22 +234,20 @@ $back: 'back';
 }
 
 @media (max-width: 740px) {
-
-  .mobile-head {
-    display: flex;
-    align-items: center; justify-content: center;
-    font-size: 30px;
-    background-color: black;
-    padding: 0 80px 0 10px;
-    height: 90px;
-  }
   .main-grid {
     padding: 0 20px;
-    text-align: justify;
 
     h2 {
       text-align: left;
     }
+  }
+
+  .grid-left, .grid-full.intro-block {
+    grid-column: 1/3;
+  }
+
+  .links {
+    flex-flow: column;
   }
 
   .opening {
@@ -244,12 +269,6 @@ $back: 'back';
 }
 
 @media (max-width: 500px) {
-  .portfolio li {
-    flex: 1 0 200px;
-  }
-  .portfolio a {
-    width: 100%;
-  }
 
   .divider {
     flex-flow: column;

@@ -9,6 +9,10 @@ import Layout from '../components/layout';
 import Seo from '../components/seo';
 import * as styles from '../style/Index.module.scss';
 
+import CVIcon from "../../static/CV.svg"
+import SPIcon from "../../static/ShortPortfolio.svg"
+import PIcon from "../../static/Portfolio.svg"
+
 const IndexPage = ({ data }) => {
   const posts = data.allMarkdownRemark.edges
 
@@ -27,7 +31,7 @@ const IndexPage = ({ data }) => {
           </div>
           <Link className={styles.link} to="/about">
             <span>Read the rest</span>
-            <span>→</span>
+            <span style={{marginLeft: '5px'}}>→</span>
           </Link>
           </div>
           <div className={`${styles.portfolio} ${styles.gridLeft}`} id="portfolio">
@@ -52,15 +56,17 @@ const IndexPage = ({ data }) => {
           <div className={styles.gridRight}>
               {
                 currentImage ?
-                <GatsbyImage image={currentImage} />
+                <GatsbyImage image={currentImage} className={styles.gridImage} transformOptions={
+                  { fit: "cover", 
+                    position: "centre"}}/>
                 : <p></p>
               }
           </div>
           <div className={`${styles.gridFull} ${styles.gridBottom}`}>
             <ul className={styles.links}>
-              <a href="/julianm-portfolio-short.pdf">Download Shortened Portfolio</a>
-              <a href="/julianm-portfolio.pdf">Download Full Portfolio</a>
-              <a href="/julianm-cv.pdf">Download CV</a>
+              <a href="/julianm-portfolio-short.pdf"><SPIcon className={"link-icon"}/>Download Shortened Portfolio</a>
+              <a href="/julianm-portfolio.pdf"><PIcon className={"link-icon"}/>Download Full Portfolio</a>
+              <a href="/julianm-cv.pdf"><CVIcon className={"link-icon"}/>Download CV</a>
             </ul>
           </div>
         </div>

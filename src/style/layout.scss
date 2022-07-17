@@ -4,6 +4,7 @@ $main: 'main';
 $back: 'back';
 
 $orange: #f8ba00;
+$blue: #0745ff;
 
 // .dark {
 //   $main: white;
@@ -815,6 +816,15 @@ pre tt:after {
   overflow: auto; // not sure if necessary
 }
 
+.link-icon {
+  width: 1rem;
+  margin-right: 5px;
+
+  @include tm.themed() {
+    fill: tm.t($main);
+  }  
+}
+
 @media (max-width: 860px) {
   /* Change to collapsible menu */
 }
@@ -830,7 +840,6 @@ pre tt:after {
     padding-left: 20px;
     width: 100%;
     font-family: "HK Grotesk", helvetica, sans-serif;
-    position: fixed;
     z-index: 10000;
   }
 
