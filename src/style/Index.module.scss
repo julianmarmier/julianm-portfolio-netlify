@@ -76,53 +76,61 @@ $back: 'back';
   }
 }
 
-.portfolio ul {
-  display: flex;
-  flex-flow: column wrap;
-  list-style-type: none;
-  margin: 0;
-
-  .title-bar {
-    font-size: 13px;
-    border-bottom-width: 2px;
-  }
-
-  li {
-    width: inherit;
-    padding: 3px 0;
-
-    @include tm.themed() {
-      background-color: tm.t($back);
-      border: tm.t($back);
-      border-bottom-color: tm.t($main);
-    }
-    // background-color: white;
-    transition: border 0.2s, box-shadow 0.2s, padding 0.2s;
-    // border: white;
-    overflow: hidden;
+.portfolio {
+  overflow: visible;
+  ul {
+    height: 100%;
     display: flex;
-    font-size: 20px;
-  
-    border-bottom: solid 1px; // black
-  
-    justify-content: space-between;
-    align-items: center;
+    flex-flow: column nowrap;
+    list-style-type: none;
+    margin: 0;
 
-    p {
-      @include tm.themed() {
-        color: tm.t($main)
-      }
-
-      margin-bottom: 0;
-      font-weight: 700;
-      transition: font-weight 0.2s;
+    .title-bar {
+      font-size: 13px;
+      border-bottom-width: 2px;
     }
-  }
 
-  a {
-    &:hover {
+    &.items {
+      overflow-y: scroll;
+    }
+    
+    li {
+      width: inherit;
+      padding: 3px 0;
+
+      @include tm.themed() {
+        background-color: tm.t($back);
+        border: tm.t($back);
+        border-bottom-color: tm.t($main);
+      }
+      // background-color: white;
+      transition: border 0.2s, box-shadow 0.2s, padding 0.2s;
+      // border: white;
+      overflow: hidden;
+      display: flex;
+      font-size: 20px;
+    
+      border-bottom: solid 1px; // black
+    
+      justify-content: space-between;
+      align-items: center;
+
       p {
-        font-weight: 400;
+        @include tm.themed() {
+          color: tm.t($main)
+        }
+
+        margin-bottom: 0;
+        font-weight: 700;
+        transition: font-weight 0.2s;
+      }
+    }
+
+    a {
+      &:hover {
+        p {
+          font-weight: 400;
+        }
       }
     }
   }
@@ -235,8 +243,6 @@ $back: 'back';
 
 @media (max-width: 740px) {
   .main-grid {
-    padding: 0 20px;
-
     h2 {
       text-align: left;
     }

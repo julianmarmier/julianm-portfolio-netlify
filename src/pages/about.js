@@ -19,7 +19,7 @@ const AboutPage = ({ data }) => {
                         {/* <section dangerouslySetInnerHTML={{__html: info.intro.html}}></section> */}
                     </div>
                 </div>
-                <div className="right">
+                {/* <div className="right"> */}
                     <div className={"present"}>
                         <h2>Present</h2>
                         <ReactMarkdown>{info.present}</ReactMarkdown>
@@ -34,7 +34,7 @@ const AboutPage = ({ data }) => {
                             }
                         </ul>
                     </div>
-                </div>
+                {/* </div> */}
             </div>
         </Layout>
     )

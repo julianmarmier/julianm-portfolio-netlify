@@ -24,9 +24,13 @@ $back: 'back';
 .grid {
     // padding: 0 30px;
     display: grid;
-    grid-template-columns: [left] 1fr [right] 1fr [end];
+    // grid-template-columns: [left] 1fr [right] 1fr [end];
     grid-column-gap: 30px;
     grid-row-gap: 40px;
+
+    grid-template-areas: 
+        "left present"
+        "left past";
 
     .full {
         grid-column: left / end;
@@ -53,50 +57,50 @@ $back: 'back';
 
     .left {
         grid-column: left / right;
+        grid-area: left;
         
         .bio {
             font-size: 1.3rem;
         }
     }
 
-    .right {
-        grid-column: right / end;
+    .present {
+        grid-area: present;
+        @include tm.themed() {
+            border: solid tm.t($main) 2px;
+        }
+        padding: 15px; 
 
-        .present {
-            @include tm.themed() {
-                border: solid tm.t($main) 2px;
-            }
-            padding: 15px; 
+        p {
+            margin: 0;
+        }
+    }
+    .past {
+        grid-area: past;
+        padding: 15px;
 
-            p {
-                margin: 0;
-            }
+        h2 {
+            margin: 10px 0;
         }
 
-        .past {
-            padding: 15px;
+        .past-list {
+            padding: 0;
+            margin: 0;
 
-            h2 {
-                margin: 10px 0;
-            }
-
-            .past-list {
-                padding: 0;
+            li {
                 margin: 0;
-    
-                li {
-                    margin: 0;
-                    padding: 10px 0;
-                    list-style-type: none;
-                    border-bottom: 1px solid;
-    
-                    @include tm.themed() {
-                        border-bottom-color: tm.t($main);
-                    }
+                padding: 10px 0;
+                list-style-type: none;
+                border-bottom: 1px solid;
+
+                @include tm.themed() {
+                    border-bottom-color: tm.t($main);
                 }
             }
         }
     }
+
+    .right { grid-column: right / end; }
 
     a {
         @include tm.themed() {
@@ -121,5 +125,27 @@ $back: 'back';
             padding: 1px 0;
         }
     }
+}
+
+@media (max-width: 740px) {
+    .grid {
+        grid-template-areas: 
+            "present"
+            "left"
+            "past";
+            
+        .past {
+            padding-top: 0;
+        }
+    }
+
+    .left {
+        padding: 0 15px;
+
+        :last-child {
+            margin-bottom: 0;
+        }
+    }
+
 }
 

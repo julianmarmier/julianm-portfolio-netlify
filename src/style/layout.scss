@@ -957,3 +957,17 @@ pre tt:after {
     display: none;
   }
 }
+
+@media screen and (max-width: 500px) {
+  footer {
+    padding: 20px 30px;
+    a.mail-link {
+      font-size: 1.2rem;
+
+      .mail-icon {
+        height: 1.5rem;
+        width: 1.5rem;
+      }
+    }
+  }
+}

@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState } from "react"
 import ReactMarkdown from "react-markdown"
 
-import { Link, graphql } from 'gatsby';
-import { GatsbyImage } from "gatsby-plugin-image";
+import { Link, graphql } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
 
-import Layout from '../components/layout';
+import Layout from "../components/layout"
 
-import Seo from '../components/seo';
-import * as styles from '../style/Index.module.scss';
+import Seo from "../components/seo"
+import * as styles from "../style/Index.module.scss"
 
 import CVIcon from "../../static/CV.svg"
 import SPIcon from "../../static/ShortPortfolio.svg"
@@ -22,8 +22,8 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout windowLoc="index">
-      <Seo title="Julian Marmier"/>
-        <div className={styles.mainGrid}>
+      <Seo title="Julian Marmier" />
+      <div className={styles.mainGrid}>
         <div className={`${styles.gridFull} nutshell ${styles.introBlock}`}>
           <div>
             <h2>In a nutshell</h2>
@@ -31,81 +31,111 @@ const IndexPage = ({ data }) => {
           </div>
           <Link className={styles.link} to="/about">
             <span>Read the rest</span>
-            <span style={{marginLeft: '5px'}}>→</span>
+            <span style={{ marginLeft: "5px" }}>→</span>
           </Link>
-          </div>
-          <div className={`${styles.portfolio} ${styles.gridLeft}`} id="portfolio">
-            <ul className={styles.portfolioList}>
+        </div>
+        <div
+          className={`${styles.portfolio} ${styles.gridLeft}`}
+          id="portfolio"
+        >
+          <ul className={styles.portfolioList}>
+            <div>
               <li className={styles.titleBar}>
                 <p>PROJECT</p>
                 <p>YEAR</p>
               </li>
+            </div>
+            <ul className={styles.items}>
               {posts.map(({ node }) => {
                 return (
-                  <Link onMouseOut={() => {setImg(false)}} onMouseOver={() => {setImg(node.frontmatter.thumbnail.childImageSharp.gatsbyImageData)}} to={node.fields.slug}><li key={node.fields.slug}>
-                    {/* <img className="portfolio-img" alt={node.frontmatter.description} src={node.frontmatter.thumbnail}/> */}
-                    <p>
-                      {node.frontmatter.title}
-                    </p>
-                    <p>{node.frontmatter.date}</p>
-                  </li></Link>
-                );
+                  <Link
+                    onMouseOut={() => {
+                      setImg(false)
+                    }}
+                    onMouseOver={() => {
+                      setImg(
+                        node.frontmatter.thumbnail.childImageSharp
+                          .gatsbyImageData
+                      )
+                    }}
+                    to={node.fields.slug}
+                  >
+                    <li key={node.fields.slug}>
+                      {/* <img className="portfolio-img" alt={node.frontmatter.description} src={node.frontmatter.thumbnail}/> */}
+                      <p>{node.frontmatter.title}</p>
+                      <p>{node.frontmatter.date}</p>
+                    </li>
+                  </Link>
+                )
               })}
             </ul>
-          </div>
-          <div className={styles.gridRight}>
-              {
-                currentImage ?
-                <GatsbyImage image={currentImage} className={styles.gridImage} transformOptions={
-                  { fit: "cover", 
-                    position: "centre"}}/>
-                : <p></p>
-              }
-          </div>
-          <div className={`${styles.gridFull} ${styles.gridBottom}`}>
-            <ul className={styles.links}>
-              <a href="/julianm-portfolio-short.pdf"><SPIcon className={"link-icon"}/>Download Shortened Portfolio</a>
-              <a href="/julianm-portfolio.pdf"><PIcon className={"link-icon"}/>Download Full Portfolio</a>
-              <a href="/julianm-cv.pdf"><CVIcon className={"link-icon"}/>Download CV</a>
-            </ul>
-          </div>
+          </ul>
         </div>
-      </Layout>
-  );
-  }
+        <div className={styles.gridRight}>
+          {currentImage ? (
+            <GatsbyImage
+              image={currentImage}
+              className={styles.gridImage}
+              transformOptions={{ fit: "cover", position: "centre" }}
+            />
+          ) : (
+            <p></p>
+          )}
+        </div>
+        <div className={`${styles.gridFull} ${styles.gridBottom}`}>
+          <ul className={styles.links}>
+            <a href="/julianm-portfolio-short.pdf">
+              <SPIcon className={"link-icon"} />
+              Download Shortened Portfolio
+            </a>
+            <a href="/julianm-portfolio.pdf">
+              <PIcon className={"link-icon"} />
+              Download Full Portfolio
+            </a>
+            <a href="/julianm-cv.pdf">
+              <CVIcon className={"link-icon"} />
+              Download CV
+            </a>
+          </ul>
+        </div>
+      </div>
+    </Layout>
+  )
+}
 
-  export default IndexPage
+export default IndexPage
 
-  export const pageQuery = graphql`{
-  site {
-    siteMetadata {
-      title
+export const pageQuery = graphql`
+  {
+    site {
+      siteMetadata {
+        title
+      }
     }
-  }
-  allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}) {
-    edges {
-      node {
-        excerpt
-        fields {
-          slug
-        }
-        frontmatter {
-          date(formatString: "YYYY")
-          title
-          description
-          thumbnail {
-            childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH)
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      edges {
+        node {
+          excerpt
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "YYYY")
+            title
+            description
+            thumbnail {
+              childImageSharp {
+                gatsbyImageData(layout: FULL_WIDTH)
+              }
             }
           }
         }
       }
     }
+    staticTextYaml {
+      intro
+      present
+      past
+    }
   }
-  staticTextYaml {
-    intro
-    present
-    past
-  }
-}
 `
