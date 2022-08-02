@@ -5,18 +5,12 @@ import Helmet from "react-helmet"
 
 import Header from "./header"
 import "../style/layout.scss"
-import *  as s from "../style/Switch.module.scss"
 
 import Mail from "../../static/mail.svg"
 import ThemeContext, { ThemeProvider } from "./themeContext"
+import ThemeSlider from "./themeSlider"
 
 const Layout = ({ children, windowLoc }) => {
-  // const [dark, setDark] = useState(false)
-
-  // function toggleDark() {
-  //   dark ? setDark(false) : setDark(true);
-  // }
-
   return (
     <ThemeContext.Consumer>
       {
@@ -43,13 +37,7 @@ const Layout = ({ children, windowLoc }) => {
                     <Mail className="mail-icon" />
                         julianmarmier@gmail.com
                       </a>
-                  <div className={`${s.slider} ${theme.dark ? s.dark : ''}`} onClick={theme.toggleDark}>
-                    <input type="checkbox" />
-                    <div className={s.background}>
-                      <div className={s.sun}></div>
-                      <div className={s.moon}></div>
-                    </div>
-                  </div>
+                    <ThemeSlider theme={theme}/>
                 </footer>
               </div>
             )}

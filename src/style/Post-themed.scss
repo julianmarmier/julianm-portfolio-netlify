@@ -9,6 +9,7 @@ $imBorder: "imBorder";
 
     &::-webkit-scrollbar {
       width: 10px;
+      margin-left: 10px;
     }
   
     &::-webkit-scrollbar-track {
@@ -30,9 +31,13 @@ $imBorder: "imBorder";
     &.grid-left-item {
       padding: 10px 0;
       // Must find way to make better/less ugly
-      // @include tm.themed() {
-      //   border-right: solid tm.t($back) 1px;
-      // }
+      @include tm.themed() {
+        border-right: solid tm.t($main) 1px;
+      }
+
+      &::-webkit-scrollbar-track {
+        border-right: 0;
+      }
     }
     
     @include tm.themed() {
@@ -86,5 +91,16 @@ $imBorder: "imBorder";
     
     a {
       margin: 0;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .post-nav {
+      font-size: 1em;
+      margin-top: 10px;
+
+      a::before {
+       font-size: 0.5em; 
+      }
     }
   }

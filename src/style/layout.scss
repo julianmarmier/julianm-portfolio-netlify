@@ -814,6 +814,7 @@ pre tt:after {
   flex: 1;
 
   overflow: auto; // not sure if necessary
+  overflow-x: hidden;
 }
 
 .link-icon {

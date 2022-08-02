@@ -47,7 +47,9 @@ $back: 'back';
       font-weight: 700;
       transition: font-weight 0.2s;
     }
+
   }
+
 
   a:hover {
     p {
@@ -73,6 +75,7 @@ $back: 'back';
 
   justify-items: stretch;
 
+
 }
 
 /* Grid Definitions*/
@@ -91,9 +94,10 @@ $back: 'back';
 }
 
 .grid-element {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr min-content;
+  column-gap: 10px;
   padding: 10px 0 ;
 }
 
@@ -134,68 +138,79 @@ $back: 'back';
   flex: 0 0 auto;
 }
 
+.grid {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: min-content 1fr min-content;
+}
 
-@media (max-width: 860px) {
-  /* Switch to single-column */
-  .main-grid {
-    grid-template-columns: [left] 1fr;
-    grid-template-rows: auto repeat(10, auto);
+.grid-mobile {
+  display: grid;
+  grid-template-columns: 1fr min-content 1fr;
+  width: 200%;
+
+  // height: 100%;
+
+  transition: transform 0.5s;
+
+  overflow: auto;
+
+  &.active {
+    transform: translateX(-50%);
   }
-  .grid-left, .grid-full, .grid-right {
-    grid-column: 1;
-  }
-  .opening > h1 {
-    font-size: 80px;
-    line-height: 70px;
-  }
-  .opening {
-    height: 40vh;
-  }
-  h2 {
-    margin-bottom: 0;
+
+}
+
+
+.divider {
+  cursor: pointer;
+  border: solid black 1px;
+
+  padding: 5px 10px 5px 5px;
+
+  height: 100%;
+  /* transform-origin: bottom right;
+  transform: rotate(90deg); */
+  writing-mode: vertical-lr;
+
+  transition: padding 0.25s;
+
+  &.active {
+    padding: 5px 5px 5px 10px;
   }
 }
 
+
+
+
+@media (max-width: 860px) {
+  /* Switch to single-column */
+  // .main-grid {
+  //   grid-template-columns: [left] 1fr;
+  //   grid-template-rows: auto repeat(10, auto);
+  // }
+  // .grid-left, .grid-full, .grid-right {
+  //   grid-column: 1;
+  // }
+  // .opening > h1 {
+  //   font-size: 80px;
+  //   line-height: 70px;
+  // }
+  // .opening {
+  //   height: 40vh;
+  // }
+  // h2 {
+  //   margin-bottom: 0;
+  // }
+}
+
 @media (max-width: 740px) {
-
-  .mobile-head {
-    display: flex;
-    align-items: center; justify-content: center;
-    font-size: 30px;
-    background-color: black;
-    padding: 0 80px 0 10px;
-    height: 90px;
-  }
-  .main-grid {
-    padding: 0 20px;
-    text-align: justify;
-
-    h2 {
-      text-align: left;
-    }
-  }
-
-  .opening {
-    height: 40vh;
-    padding: 0 20px;
-
-    & > h1 {
-      font-size: 60px;
-      text-align: center;
-      line-height: 50px;
-    }
-  }
-
-  .divider {
-    padding: 20px;
-    align-items: center;
-    justify-content: center;
-  }
+  // Introduce single line layout here
 }
 
 @media (max-width: 500px) {
   .portfolio li {
-    flex: 1 0 200px;
+    flex: 1 0 3vh;
   }
   .portfolio a {
     width: 100%;
@@ -208,6 +223,11 @@ $back: 'back';
     margin: 15px 5px 5px 5px;
   }
 
+  .opening {
+    h1 {
+      font-size: 1.3rem;
+    }
+  }
 }
 
 // Currently Useless
