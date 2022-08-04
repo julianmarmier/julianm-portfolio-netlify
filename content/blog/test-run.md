@@ -1,6 +1,7 @@
 ---
 title: Test Run
 date: 2021-07-28T22:37:14.009Z
+tag: Testing
 description: A test post.
 thumbnail: /img/d9075f2a235a4d3aa9af4c3e80b89039.png
 images:

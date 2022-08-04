@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { Link, graphql } from "gatsby"
 import Seo from "../components/seo"
 
@@ -13,6 +13,7 @@ import "../style/Post-themed.scss"
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
   const { previous, next } = pageContext
+
 
   return (
     <Layout windowLoc="article">
@@ -59,7 +60,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </li>
         </ul>
       </nav>
-      {/* </div> */}
     </Layout>
   )
 }

@@ -1,5 +1,6 @@
 ---
 title: World Languages at LHS Poster
+tag: Graphic Design
 date: 2020-03-13T15:46:54.070Z
 description: A poster I made for the World Languages building at my school
 thumbnail: /img/wl-thumbnail.png

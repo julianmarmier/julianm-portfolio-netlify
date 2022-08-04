@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import * as styles from "../style/Post.module.scss"
+import { useDrag } from "@use-gesture/react"
 
 import useWindowDimensions from "../helper/windowDimensions"
 import Lightbox from "../components/lightbox"
@@ -13,8 +14,14 @@ const PostContent = (props) => {
   const { width } = useWindowDimensions()
   const WIN_BREAKPOINT = 740
 
+  const bind = useDrag(({swipe: [swipeX]}) => {
+    console.log(`Dragged, swipeX=${swipeX}`)
+    if (swipeX < 0) setShowMedia(true)
+    else if (swipeX > 0) setShowMedia(false);
+  })
+
   return width < WIN_BREAKPOINT ? (
-      <div className={`${styles.gridMobile} ${showMedia ? styles.active : ""}`}>
+      <div {...bind()} className={`${styles.gridMobile} ${showMedia ? styles.active : ""}`}>
         <div className={`${styles.gridLeft} grid-left-item scroller`}>
           <section
             className="art-main"

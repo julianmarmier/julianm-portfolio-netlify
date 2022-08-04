@@ -149,6 +149,8 @@ $back: 'back';
   grid-template-columns: 1fr min-content 1fr;
   width: 200%;
 
+  touch-action: none;
+
   // height: 100%;
 
   transition: transform 0.5s;
@@ -157,6 +159,10 @@ $back: 'back';
 
   &.active {
     transform: translateX(-50%);
+  }
+
+  .grid-left {
+    border-right: 0 !important;
   }
 
 }

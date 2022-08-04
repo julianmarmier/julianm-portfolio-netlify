@@ -1,5 +1,6 @@
 ---
 title: MIT Museum Studio & Compton Gallery
+tag: Product Design & VFX Animation
 date: 2020-03-13T15:32:59.989Z
 description: Internship at the MIT Museum Studio & Compton Gallery
 images:

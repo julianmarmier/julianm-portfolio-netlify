@@ -12,6 +12,7 @@ import * as styles from "../style/Index.module.scss"
 import CVIcon from "../../static/CV.svg"
 import SPIcon from "../../static/ShortPortfolio.svg"
 import PIcon from "../../static/Portfolio.svg"
+import useWindowDimensions from "../helper/windowDimensions"
 
 const IndexPage = ({ data }) => {
   const posts = data.allMarkdownRemark.edges
@@ -19,6 +20,7 @@ const IndexPage = ({ data }) => {
   // const imList = edges.map()
 
   const [currentImage, setImg] = useState(false)
+  const { width } = useWindowDimensions()
 
   return (
     <Layout windowLoc="index">
@@ -59,10 +61,14 @@ const IndexPage = ({ data }) => {
                       )
                     }}
                     to={node.fields.slug}
+                    key={node.fields.slug}
                   >
                     <li key={node.fields.slug}>
                       {/* <img className="portfolio-img" alt={node.frontmatter.description} src={node.frontmatter.thumbnail}/> */}
-                      <p>{node.frontmatter.title}</p>
+                      <div>
+                        <p>{node.frontmatter.title}</p>
+                        { width < 740 && <p className={styles.tag}> { node.frontmatter.tag } </p> }
+                      </div>
                       <p>{node.frontmatter.date}</p>
                     </li>
                   </Link>
@@ -122,6 +128,7 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "YYYY")
             title
+            tag
             description
             thumbnail {
               childImageSharp {

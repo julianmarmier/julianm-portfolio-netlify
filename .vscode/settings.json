@@ -1,6 +1,6 @@
 {
     "window.autoDetectColorScheme": true,
-    "workbench.colorTheme": "Default Light+",
+    "workbench.colorTheme": "Default Dark+",
     "editor.semanticTokenColorCustomizations": {
         "rules": {
             "*.deprecated": {

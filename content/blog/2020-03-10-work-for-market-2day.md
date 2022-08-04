@@ -1,5 +1,6 @@
 ---
 title: Work for Market 2day
+tag: Web & UX design
 date: 2020-03-10T04:26:51.256Z
 description: Work I did for food startup Market 2day
 images:

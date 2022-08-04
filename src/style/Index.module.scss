@@ -92,6 +92,10 @@ $back: 'back';
 
     &.items {
       overflow-y: scroll;
+
+      .tag {
+        font-weight: normal;
+      }
     }
     
     li {

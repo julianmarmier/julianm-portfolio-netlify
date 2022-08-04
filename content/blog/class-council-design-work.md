@@ -1,5 +1,6 @@
 ---
 title: Class Council Design Work
+tag: Graphic Design
 date: 2020-03-13T15:32:07.523Z
 description: Graphic design work I completed for my school's class council
 images:

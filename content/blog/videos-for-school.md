@@ -1,5 +1,6 @@
 ---
 title: Videos for School
+tag: Video Editing
 date: 2020-03-13T15:33:46.827Z
 description: Videos I made for school
 thumbnail: /img/4793bdc488d342969d2f245d57cd2c09.png
