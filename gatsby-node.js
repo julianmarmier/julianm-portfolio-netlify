@@ -3,6 +3,18 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 
 // const { fmImagesToRelative } = require('gatsby-remark-relative-images')
 
+const findAdjacentPost = (post, postList, direction = 1) => {
+  const sorted = postList.filter(p =>
+    post.node.frontmatter.archived
+      ? p.node.frontmatter.archived
+      : !p.node.frontmatter.archived
+  )
+
+  const index = sorted.indexOf(post) + direction
+
+  return 0 <= index && index < sorted.length ? sorted[index].node : null
+}
+
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
@@ -21,6 +33,7 @@ exports.createPages = async ({ graphql, actions }) => {
               }
               frontmatter {
                 title
+                archived
               }
             }
           }
@@ -37,8 +50,8 @@ exports.createPages = async ({ graphql, actions }) => {
   const posts = result.data.allMarkdownRemark.edges
 
   posts.forEach((post, index) => {
-    const previous = index === posts.length - 1 ? null : posts[index + 1].node
-    const next = index === 0 ? null : posts[index - 1].node
+    const previous = findAdjacentPost(post, posts, -1)
+    const next = findAdjacentPost(post, posts, 1)
 
     createPage({
       path: post.node.fields.slug,
@@ -98,13 +111,14 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   //   });
   // }
 
-  // For the static.yml page: 
+  // For the static.yml page:
 
   // if (node.internal.type === `File` && node.name === `static`) {
 
   // }
 
   if (node.internal.type === `MarkdownRemark`) {
+    
     const value = createFilePath({ node, getNode })
     createNodeField({
       name: `slug`,

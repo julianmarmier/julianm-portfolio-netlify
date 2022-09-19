@@ -67,7 +67,9 @@ const IndexPage = ({ data }) => {
                       {/* <img className="portfolio-img" alt={node.frontmatter.description} src={node.frontmatter.thumbnail}/> */}
                       <div>
                         <p>{node.frontmatter.title}</p>
-                        { width < 740 && <p className={styles.tag}> { node.frontmatter.tag } </p> }
+                        {width < 740 && (
+                          <p className={styles.tag}> {node.frontmatter.tag} </p>
+                        )}
                       </div>
                       <p>{node.frontmatter.date}</p>
                     </li>
@@ -118,7 +120,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { archived: { ne: true } } }
+    ) {
       edges {
         node {
           excerpt
@@ -128,6 +133,7 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "YYYY")
             title
+            archived
             tag
             description
             thumbnail {

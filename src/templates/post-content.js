@@ -15,7 +15,6 @@ const PostContent = (props) => {
   const WIN_BREAKPOINT = 740
 
   const bind = useDrag(({swipe: [swipeX]}) => {
-    console.log(`Dragged, swipeX=${swipeX}`)
     if (swipeX < 0) setShowMedia(true)
     else if (swipeX > 0) setShowMedia(false);
   })
