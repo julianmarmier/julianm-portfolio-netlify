@@ -13,4 +13,4 @@ A﻿ few years ago to practice developing apps on the Electron platform, I decid
 
 F﻿ast-forward to 2022, where I've decided to fix my past mistakes by… starting over! Meet [Organize](https://organize.julianmarmier.com), the file manager that'll actually help you sort your files. Built on Tauri and Svelte, the app takes up a mere few megabytes of disk space, a significant improvement contrasted with Electron's few hundreds.
 
-Try it out on the project's [releases page](https://github.com/julianmarmier/organize/releases/latest)
+Try it out on the project's [releases page](https://github.com/julianmarmier/organize/releases/latest)!
