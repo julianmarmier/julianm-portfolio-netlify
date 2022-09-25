@@ -11,6 +11,7 @@ const getWindowDimensions = () => {
       height,
     }
   }
+  return {width: 500}
 }
 
 const useWindowDimensions = () => {
