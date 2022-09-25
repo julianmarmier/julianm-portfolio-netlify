@@ -3,7 +3,7 @@ title: Organize
 tag: Application Development
 date: 2022-09-19T11:47:50.897Z
 description: An application that actually helps you sort your files.
-thumbnail: /img/screenshot.png
+thumbnail: /img/organize-thumbnail.png
 archived: false
 images:
   - image: /img/screenshot.png
