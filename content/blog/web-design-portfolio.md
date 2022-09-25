@@ -3,6 +3,8 @@ title: Web Design Portfolio
 tag: Web Design Projects
 date: 2020-03-13T15:34:20.664Z
 description: Some websites I have made.
+thumbnail: /img/web-design-cover.png
+archived: true
 images:
   - image: /img/masksforhunger.png
     alt: Masks for Hunger
@@ -16,7 +18,6 @@ images:
     alt: Go To Math Texbook Page - Website
   - image: /img/eclo.png
     alt: ECLO Consulting Website
-thumbnail: /img/web-design-cover.png
 ---
 One of my favorite hobbies is web design—I like creating page layouts, and then bringing them to life with HTML, JavaScript, and CSS. I prefer web design over traditional mobile app design, just because it's much more flexible in terms of how tons of features can be added without requiring too much work.
 
