@@ -11,4 +11,4 @@ images:
   - alt: The proposed main website design, part two
     image: /img/slp-sample-website-1-.png
 ---
-As a part of their rebranding efforts, Boston-based startup incubator Startup Leadership Program was looking to unify their worldwide chapters’ website design. As a design consultant, I proposed a standard branding guide for the company as well as a new standardized website chapter design.
+As a part of their rebranding efforts, Boston-based startup incubator [Startup Leadership Program](https://startupleadership.com) was looking to unify their worldwide chapters’ website design. As a design consultant, I proposed a standard branding guide for the company as well as a new standardized website chapter design. 
