@@ -3,7 +3,7 @@ title: Startup Leadership
 tag: Design Consulting
 date: 2022-09-20T07:45:46.495Z
 description: Design consulting for a startup incubator
-thumbnail: /img/slp-sample-website-opener.png
+thumbnail: /img/slp-sample-website-thumbnail.png
 archived: false
 images:
   - image: /img/slp-sample-website.png
