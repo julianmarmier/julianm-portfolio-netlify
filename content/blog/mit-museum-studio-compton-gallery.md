@@ -27,13 +27,13 @@ Among the tasks that I accomplished during my time at the gallery, my two favori
 
 ## Demo Lights
 
-In preparation for the upcoming school year, I was asked to make a complete version of a makeshift demolight that had already previously been produced, which used LED RGBW chips, a LUXDrive FlexBlock, and a few slide potentiometers:
+In preparation for the upcoming school year, I was asked to make a complete version of a makeshift demolight that had already previously been produced, which used LED RGBW chips, a LUXDrive FlexBlock, and a few slide potentiometers.
 
-After having communicated with the studio managers to get an idea of the design they wanted, which was to be 3D-printed, I set off to put together a protype for the lights, beginning with the planning phase:
+After having communicated with the studio managers to get an idea of the design they wanted, which was to be 3D-printed, I set off to put together a protype for the lights, beginning with the planning phase (see drawings).
 
-And then to create a 3D Model of the product:
+I then proceeded to create a 3D Model of the product (see 3D wireframe)
 
-Unfortunately 3D printing turned out to be too expensive, so what we came up with instead was to use layered laser-cut pieces of acrylic locked in place with large threaded wires. After a few more hours of planning and measuring, I was able to figure out a way for the parts to fit, using a modular plate system:
+Unfortunately 3D printing turned out to be too expensive, so what we came up with instead was to use layered laser-cut pieces of acrylic locked in place with large threaded wires. After a few more hours of planning and measuring, I was able to figure out a way for the parts to fit, using a modular plate system.
 
 Once assembled, the flashlights worked and to my suprise all of the parts fit perfectly into the laser-cut frame, which gave the product a professional look!
 

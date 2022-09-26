@@ -142,6 +142,8 @@ $back: 'back';
     .left {
         padding: 0 15px;
 
+	grid-column-end: left;
+
         :last-child {
             margin-bottom: 0;
         }
