@@ -33,10 +33,6 @@ $back: 'back';
         }
     }
 
-    .left {
-        grid-column: left / right;
-    }
-
     .right {
         grid-column: right / end;
 

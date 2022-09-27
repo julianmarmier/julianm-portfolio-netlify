@@ -56,7 +56,6 @@ $back: 'back';
     }
 
     .left {
-        grid-column: left / right;
         grid-area: left;
         
         .bio {
