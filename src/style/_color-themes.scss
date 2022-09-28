@@ -4,18 +4,24 @@ $default-back: white;
 $dark-fore: white;
 $dark-back: rgb(50, 50, 50);
 
+$orange: #f8ba00;
+$blue: #0745ff;
+
+
 $themes: (
     default: (
         main: black,
         imBorder: black,
         back: white,
         footBorder: none,
+        accent: $orange
     ),
     dark: (
         main: white,
         back: rgb(50, 50, 50),
         imBorder: lightgray,
         footBorder: solid white 3px,
+        accent: $blue
     )
 );
 

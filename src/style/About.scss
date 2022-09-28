@@ -2,11 +2,16 @@
 
 $main: 'main';
 $back: 'back';
+$accent: 'accent';
+
+
 
 .nutshell {
     @include tm.themed() {
         border: solid tm.t($main) 3px;
+        background-color: tm.t($accent);
     }
+
 
     h2 {
         font-size: 0.8em;
@@ -19,6 +24,8 @@ $back: 'back';
         font-size: 1.5em;
         line-height: 1.1;
     }
+
+    
 }
 
 .grid {
