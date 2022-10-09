@@ -29,7 +29,7 @@ $imBorder: "imBorder";
     overflow-y: auto;
 
     &.grid-left-item {
-      padding: 10px 0;
+      padding: 10px 10px 0px 10px;
       // Must find way to make better/less ugly
       @include tm.themed() {
         border-right: solid tm.t($main) 1px;

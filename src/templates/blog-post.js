@@ -39,22 +39,22 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       <nav className={`${styles.gridFull} ${styles.nav}`}>
         <ul className="post-nav">
           <li>
-            {next && (
-              <>
-                {/* <p>←</p> */}
-                <Link to={next.fields.slug} className="next" rel="next">
-                  {next.frontmatter.title}
-                </Link>
-              </>
-            )}
-          </li>
-          <li>
             {previous && (
               <>
                 <Link to={previous.fields.slug} className="prev" rel="prev">
                   {previous.frontmatter.title}
                 </Link>
                 {/* <p>→</p> */}
+              </>
+            )}
+          </li>
+          <li>
+            {next && (
+              <>
+                {/* <p>←</p> */}
+                <Link to={next.fields.slug} className="next" rel="next">
+                  {next.frontmatter.title}
+                </Link>
               </>
             )}
           </li>
