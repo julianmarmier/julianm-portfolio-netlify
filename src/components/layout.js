@@ -33,9 +33,9 @@ const Layout = ({ children, windowLoc }) => {
                 <Header windowLoc={windowLoc} />
                 <main className={`main-content`}>{children}</main>
                 <footer>
-                  <a className="mail-link" href="mailto:julianmarmier@gmail.com">
+                  <a className="mail-link" href="mailto:julian@marmier.co">
                     <Mail className="mail-icon" />
-                        julianmarmier@gmail.com
+                        julian@marmier.co
                       </a>
                     <ThemeSlider theme={theme}/>
                 </footer>
