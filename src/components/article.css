@@ -5,7 +5,7 @@
   justify-content: center;
   padding: 30px 210px 10px 50px;
   flex-flow: column nowrap;
-  overflow: scroll;
+  overflow: auto;
   color: white;
 }
 

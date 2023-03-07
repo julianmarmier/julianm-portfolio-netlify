@@ -91,7 +91,7 @@ $back: 'back';
     }
 
     &.items {
-      overflow-y: scroll;
+      overflow-y: auto;
 
       .tag {
         font-weight: normal;
